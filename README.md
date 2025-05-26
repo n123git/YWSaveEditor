@@ -7,15 +7,15 @@ A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting b
 ## Features
 
 - **Game Support**: Works with Yo-kai Watch 2 save data.
--   **Cross-Platform**:  
-  - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, and iOS**.  
-  - **3DS Version** — run directly on a homebrewed 3DS for on-the-go editing.
+-  **Cross-Platform**:  
+   - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, and iOS**.  
+   - **3DS Version** — run directly on a homebrewed 3DS for on-the-go editing.
 -  **Feature-Rich**: Includes all features from Togenyan’s editor — and more:
-  - Modify Yo-kai, inventory, key items, money, team, medals, and more.
-  - Built-in hex and table views.
-  - Illegal value detection and suggestion.
+   - Modify Yo-kai, inventory, key items, money, team, medals, and more.
+   - Built-in hex and table views.
+   - Illegal value detection and suggestion.
 -  **Modding Support**: Built with modularity in mind — ideal for custom Yo-kai, fan translations etc.
--  **Modular Architecture**: Easy to add or tweak parsing logic, field definitions, or UI components.
+   - Easy to add or tweak parsing logic, field definitions, or UI components.
 -  **Fast & Efficient**: Optimized for speed, responsiveness, and low memory use — even on 3DS hardware.
 - **Open Source**: Transparent, editable, and developer-friendly.
 - **Actively Maintained**: New features and fixes added regularly.
