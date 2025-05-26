@@ -4,6 +4,11 @@ A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting b
 
 ---
 
+## Table of Contents:
+- Check `docs` for documentation on the Save System,
+- Check `Releases` for releases and source code.
+- Use `Issues` or `Pull Requests` to make a suggestion.
+
 ## Features
 
 - **Game Support**: Works with Yo-kai Watch 2 save data.
