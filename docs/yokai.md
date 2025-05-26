@@ -1,19 +1,19 @@
 - Each Yo-kai is 92 bytes long (`0x5C`).
 - The first 2 bytes refer to #0 (sometimes called `num1`)
 - The next 2 bytes refer to #1 (sometimes called `num2`)
-   - It is unknown what these 2 do, although they are also present in Items, and might be related to sorting.
-- The next 4 bytes refer to the Yo-kai's `ID`, to decode this you first reverse the `Byte Array` (to make it `Big Endian`) and then convert it to decimal.
+   - It is unknown what these two do, although they are also present in Items, and might be related to sorting.
+- The next 4 bytes refer to the Yo-kai's ID. They are stored in `Little Endian` format, so reverse the `Byte Array` to convert to `Big Endian` before interpreting it as decimal.
 - The next 23 bytes refer to the Yo-kai's Nickname, set it to `0x0` if it has none. This can be decoded by treating it as a `UTF-8` string.
 - The next byte is unknown
 - This next 20 bytes aren't fully known in detail yet but are related to factors such as Unlocked Soultimates (Jibanyan).
-- These 4 bytes refer to the Current XP toward the next level (not total XP). It should be coded as a Little-endian `Uint32` (32-bit unsigned integer).
+- These 4 bytes refer to the Current XP toward the next level (not total XP). It should be decoded as a Little-endian `Uint32` (32-bit unsigned integer).
 - These next 4 bytes refer to several things, but the first 2 bytes refer to the remaining HP of the Yo-kai, treat it as a signed 16-bit integer (`int16`).
 - The next 4 bytes refer to the `OwnerID`. Which is the Yo-kai's original owner. Stored as hex.
 - The next 5 bytes are IV's
 - The next 5 bytes are EV's
 - The next byte is unknown
-- The next 4 bytes are Sport Center buffs, although there are some problems interpereting these right now.
-- The next byte is the Yo-kai's Level, it is intended to go from (0–99), but can technicallyy reach level `255`.
+- The next 4 bytes are Sport Center buffs, although there are some problems interpreting these right now.
+- The next byte is the Yo-kai's Level, it is intended to go from (0–99), but can technically reach level `255`.
 - The next 4 bytes include several things, such as Win Pose data; The first byte is the selected pose, while the rest forms a bitmask of unlocked poses. Refer to my `data` folder for pose lookup code.
 - The next byte combines Loafing behavior (high 4 bits) and Attitude (low 4 bits). Check the `data` dir for more information regarding decoding.
 - The next 7 bytes include several pieces of data, such as the current Soultimate for Jibanyan.
