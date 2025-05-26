@@ -1,6 +1,6 @@
 # Yo-kai Watch 2 Save Editor
 
-A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting both **desktop and 3DS platforms**. Built to be fast, flexible, and future-proof — ideal for both casual players and advanced modders. For everyone from competitive players, modders, and experimenters.
+A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting both **desktop, mobile and the 3DS!**. Built to be fast, flexible, and future-proof. Whether you're a competitive players, modder, or just a casual player. This tool was made for you!
 
 ---
 
