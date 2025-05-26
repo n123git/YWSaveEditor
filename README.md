@@ -1,2 +1,91 @@
-# YWSaveEditor
-A Save Editor for YW2, supporting many features
+# Yo-kai Watch 2 Save Editor
+
+A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting both **desktop and 3DS platforms**. Built to be fast, flexible, and future-proof — ideal for both casual players and advanced modders.
+
+---
+
+## ✨ Features
+
+- 🎮 **Game Support**: Works with Yo-kai Watch 2 save data.
+- 🖥️ **Cross-Platform**:  
+  - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, and iOS**.  
+  - **3DS Version** — run directly on a homebrewed 3DS for on-the-go editing.
+- 🔧 **Feature-Rich**: Includes all features from Togenyan’s editor — and more:
+  - Modify Yo-kai, inventory, key items, money, team, medals, and more.
+  - Full UTF-8 name editing.
+  - Built-in hex and table views.
+- 🧩 **Modding Support**: Built with extensibility in mind — ideal for custom Yo-kai, fan translations, and experimental save structures.
+- 🧠 **Modular Architecture**: Easy to add or tweak parsing logic, field definitions, or UI components.
+- ⚡ **Fast & Efficient**: Optimized for speed, responsiveness, and low memory use — even on 3DS hardware.
+- 🛠️ **Open Source**: Transparent, editable, and developer-friendly.
+- 🚧 **Actively Maintained**: New features and fixes added regularly.
+
+---
+
+## 📦 Download
+
+### ➤ HTML Version
+- [Download ZIP](#) (includes `ANCHOREDITv2.HTML`)
+- Open in any modern web browser.
+- No installation, no internet required.
+
+### ➤ 3DS Version
+- [Download `.cia`](#)
+
+---
+
+## 🧙 Getting Started
+
+1. **Backup your save file!**  
+   Mistakes can corrupt saves — always keep a copy.
+2. **Load your save** via the file picker (HTML) or automatically (3DS).
+3. Use the intuitive interface or hex editor to make your changes.
+4. Press **Save** and reinsert the save into your game.
+
+---
+
+## ❓ Q / A
+
+**Q: How do I add support for custom Yo-kai?**  
+A: Simply copy-paste the custom Yo-kai data into the `yokai.js` file located in the `data` folder of the editor. This will let the editor recognize and display your custom entries instead of leaving it blank.
+
+**Q: Can this editor change the rank of a Yo-kai?**  
+A: No. This is a save editor focused on save data manipulation, not a full game editor or modder. For changing ranks or other in-game logic, please use specialized tools such as [Albatross](https://example.com/albatross) or similar.
+
+**Q: Does the editor support Yo-kai Watch 1 or other versions?**  
+A: Currently, the editor is only designed for Yo-kai Watch 2 saves. Support for other versions may be added in the future.
+
+**Q: Is it safe to edit my save with this editor?**  
+A: While the editor is tested and reliable, always **backup your save files** before making changes. Corruption can occur if invalid data is introduced.
+
+**Q: How do I report bugs or request features?**  
+A: Open an issue on the project’s GitHub repository or contact the maintainers via the provided communication channels.
+
+---
+
+## 🧑‍💻 Developer Info
+
+- Written in **vanilla HTML + JavaScript** (desktop) and **lua** (3DS).
+- Save structure parsing is fully modular and documented.
+- External condition and ID mappings use plain JSON for easy editing.
+
+### Contributing
+Pull requests, suggestions, and issue reports are welcome!  
+See `docs/STRUCTURE.md` for the save format documentation.
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.  
+You are free to use, modify, and distribute it as long as you credit the original authors.
+
+---
+
+## 🙏 Credits
+
+- The LovePotion Team - for the beautiful 3DS Game Engine
+- Nobody_F34R - for his YW-ID project, general help and being a chill guy all around.
+- Togenyan — inspiration and original editor framework.
+- Level-5 — developers of Yo-kai Watch.
+- The community — for reverse engineering efforts and feedback.
