@@ -14,8 +14,8 @@
 - The next byte is unknown
 - The next 4 bytes are Sport Center buffs, although there are some problems interpereting these right now.
 - The next byte is the level
-- The next 4 bytes include several things, including the unlocked Win Poses and the selected one.
-- The next byte handles both attitude's.
+- The next 4 bytes include several things, including the unlocked Win Poses and the selected one. To get the selected winpose you get the first part, which corresponds to a Pose, and can therfore be looked up via an array stored in my `data` dir. The unlocked winposes are simply a bitmask, read my code in the `data` dir for more information.
+- The next byte handles both attitude's, where the 2 hex characters correspond to the 2 attitude's. Check the `data` dir for more information
 - The next 7 bytes include several pieces of data, such as the current Soultimate for Jibanyan.
 
 For example:
