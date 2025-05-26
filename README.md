@@ -76,6 +76,10 @@ A: Open an issue on the project’s GitHub repository or contact the maintainers
 Pull requests, suggestions, and issue reports are welcome!  
 See `docs/STRUCTURE.md` for the save format documentation.
 
+### Current Progress
+- Save Data Decryption: 80%
+- Yo-kai Editing: 95%
+- Save Data Encryption: 30%
 ---
 
 ## License
