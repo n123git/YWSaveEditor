@@ -2,7 +2,7 @@
 - The first 2 bytes refer to #0 (sometimes called `num1`)
 - The next 2 bytes refer to #1 (sometimes called `num2`)
    - It is unknown what these two do, although they are also present in Items, and might be related to sorting.
-- The next 4 bytes refer to the Yo-kai's ID. They are stored in `Little Endian` format, so reverse the `Byte Array` to convert to `Big Endian` before interpreting it as decimal.
+- The next 4 bytes refer to the Yo-kai's ID stored as a `Uint32` (32-bit Unsiged Integer). They are stored in `Little Endian` format, so reverse the `Byte Array` to convert to `Big Endian` before interpreting it as decimal.
 - The next 23 bytes refer to the Yo-kai's Nickname, set it to `0x0` if it has none. This can be decoded by treating it as a `UTF-8` string.
 - The next byte is unknown
 - This next 20 bytes aren't fully known in detail yet but are related to factors such as Unlocked Soultimates (Jibanyan).
