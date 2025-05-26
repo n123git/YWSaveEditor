@@ -1,0 +1,1 @@
+- Each Yo-kai is `0x5C` bytes long
