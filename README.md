@@ -1,28 +1,28 @@
 # Yo-kai Watch 2 Save Editor
 
-A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting both **desktop and 3DS platforms**. Built to be fast, flexible, and future-proof — ideal for both casual players and advanced modders.
+A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting both **desktop and 3DS platforms**. Built to be fast, flexible, and future-proof — ideal for both casual players and advanced modders. For everyone from competitive players, modders, and experimenters.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎮 **Game Support**: Works with Yo-kai Watch 2 save data.
-- 🖥️ **Cross-Platform**:  
+- **Game Support**: Works with Yo-kai Watch 2 save data.
+-   **Cross-Platform**:  
   - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, and iOS**.  
   - **3DS Version** — run directly on a homebrewed 3DS for on-the-go editing.
-- 🔧 **Feature-Rich**: Includes all features from Togenyan’s editor — and more:
+-  **Feature-Rich**: Includes all features from Togenyan’s editor — and more:
   - Modify Yo-kai, inventory, key items, money, team, medals, and more.
-  - Full UTF-8 name editing.
   - Built-in hex and table views.
-- 🧩 **Modding Support**: Built with extensibility in mind — ideal for custom Yo-kai, fan translations, and experimental save structures.
-- 🧠 **Modular Architecture**: Easy to add or tweak parsing logic, field definitions, or UI components.
-- ⚡ **Fast & Efficient**: Optimized for speed, responsiveness, and low memory use — even on 3DS hardware.
-- 🛠️ **Open Source**: Transparent, editable, and developer-friendly.
-- 🚧 **Actively Maintained**: New features and fixes added regularly.
+  - Illegal value detection and suggestion.
+-  **Modding Support**: Built with modularity in mind — ideal for custom Yo-kai, fan translations etc.
+-  **Modular Architecture**: Easy to add or tweak parsing logic, field definitions, or UI components.
+-  **Fast & Efficient**: Optimized for speed, responsiveness, and low memory use — even on 3DS hardware.
+- **Open Source**: Transparent, editable, and developer-friendly.
+- **Actively Maintained**: New features and fixes added regularly.
 
 ---
 
-## 📦 Download
+## Downloading
 
 ### ➤ HTML Version
 - [Download ZIP](#) (includes `ANCHOREDITv2.HTML`)
@@ -34,7 +34,7 @@ A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting b
 
 ---
 
-## 🧙 Getting Started
+## Getting Started
 
 1. **Backup your save file!**  
    Mistakes can corrupt saves — always keep a copy.
@@ -50,9 +50,12 @@ A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting b
 A: Simply copy-paste the custom Yo-kai data into the `yokai.js` file located in the `data` folder of the editor. This will let the editor recognize and display your custom entries instead of leaving it blank.
 
 **Q: Can this editor change the rank of a Yo-kai?**  
-A: No. This is a save editor focused on save data manipulation, not a full game editor or modder. For changing ranks or other in-game logic, please use specialized tools such as [Albatross](https://example.com/albatross) or similar.
+A: No. This is a save editor, not a game editor or modder. For modding the game, please use other tools such as [Albatross](https://github.com/Tiniifan/Albatross).
 
-**Q: Does the editor support Yo-kai Watch 1 or other versions?**  
+**Q: Does the editor support all versions of Yo-kai Watch 2?**  
+A: This editor is tested on EUR and USA v2.0, but will work for all 2.0 versions, and may work for 1.0 and JP versions, albeit with limited support.
+
+**Q: Does the editor support Yo-kai Watch 1 or other games?**  
 A: Currently, the editor is only designed for Yo-kai Watch 2 saves. Support for other versions may be added in the future.
 
 **Q: Is it safe to edit my save with this editor?**  
@@ -63,7 +66,7 @@ A: Open an issue on the project’s GitHub repository or contact the maintainers
 
 ---
 
-## 🧑‍💻 Developer Info
+## Developer Info
 
 - Written in **vanilla HTML + JavaScript** (desktop) and **lua** (3DS).
 - Save structure parsing is fully modular and documented.
