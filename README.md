@@ -1,3 +1,8 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/platform-3DS%20Lua%20%7C%20Web%20HTML5-green)](#)
+
+
+
 # Yo-kai Watch 2 Save Editor
 
 A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting **desktop, mobile and 3DS!** Built to be fast, flexible, and future-proof. Whether you're a competitive player, modder, or just a casual fan — this tool was made for you!
@@ -52,7 +57,7 @@ A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting *
 ## ❓ Q / A
 
 **Q: How do I add support for custom Yo-kai?**  
-A: Simply copy-paste the custom Yo-kai data into the `yokai.js` file located in the `data` folder of the editor. This will let the editor recognize and display your custom entries instead of leaving it blank.
+A: Simply Copy-Paste your custom Yo-kai data into the `yokai.js` file in the `data` folder. The editor will then recognize and display your custom entries instead of leaving them blank.
 
 **Q: Can this editor change the rank of a Yo-kai?**  
 A: No. This is a save editor, not a game editor or modder. For modding the game, please use other tools such as [Albatross](https://github.com/Tiniifan/Albatross).
