@@ -66,9 +66,9 @@ A: Open an issue on the project’s GitHub repository or contact the maintainers
 
 ---
 
-## Developer Info
+## Dev Info
 
-- Written in **vanilla HTML + JavaScript** (desktop) and **lua** (3DS).
+- Written in **vanilla HTML/JS/CSS** (desktop) and **Lua** via **LovePotion** (3DS).
 - Save structure parsing is fully modular and documented.
 - External condition and ID mappings use plain JSON for easy editing.
 
@@ -78,14 +78,14 @@ See `docs/STRUCTURE.md` for the save format documentation.
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License.  
 You are free to use, modify, and distribute it as long as you credit the original authors.
 
 ---
 
-## 🙏 Credits
+## Credits
 
 - The LovePotion Team - for the beautiful 3DS Game Engine
 - Nobody_F34R - for his YW-ID project, general help and being a chill guy all around.
