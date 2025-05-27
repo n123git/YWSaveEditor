@@ -1,6 +1,7 @@
 ### Disclaimer
 - This documentation won't help you if you don't understand what bytes, endianness and hex is. This is for programmers who want to understand how the save file system works for Yo-kai.
 
+- The first Yo-kai starts at offset `0x5108`, and the final Yo-kai is assumed (not confirmed) to end at `0xE2F0`
 - Each Yo-kai has a 92 byte long entry (a maximum offset of `0x5C`).
 - The first 2 bytes refer to #0 (sometimes called `num1`)
 - The next 2 bytes refer to #1 (sometimes called `num2`)
@@ -20,4 +21,36 @@
 - The next 4 bytes include several things, such as Win Pose data; The first byte is the selected pose, while the rest forms a bitmask of unlocked poses. Refer to my `data` folder for pose lookup code, as it is too complicated to explain here.
 - The next byte combines Loafing behavior (high 4 bits) and Attitude (low 4 bits). Check the `data` dir for more information regarding decoding.
 - The next 7 bytes include several pieces of data, such as the current Soultimate for Jibanyan.
-     
+
+Example:
+     | Offset | Size | Field         | Description                                         | Raw Hex Bytes                                      | Decoded                                                                 |
+|--------|------|---------------|-----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------------------------|
+| 0x00   | 2    | num1          | Index #0                                            | 7B 00                                              | 123                                                                     |
+| 0x02   | 2    | num2          | Index #1                                            | 7C 00                                              | 124                                                                     |
+| 0x04   | 4    | youkaiId      | Actual Yo-kai species ID                            | BA E6 F9 FC                                        | fcf9e6ba (4244235962/Unfairy, 355)                                     |
+| 0x08   | 23   | nickname      | UTF-8 string, max 22 chars + null                   | 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |                                                                         |
+| 0x1f   | 1    | unused1       | (unused)                                            | 00                                                 | 00                                                                      |
+| 0x20   | 20   | SpecialUnlock | Dictates whether special features are unlocked      | 00 00 00 00 00 00 00 00 00 00 0A 00 00 00 0A 00 00 00 0A 00           | Unknown: (0), Attack Level: 10, Technique Level: 10, Soultimate Level: 10 |
+| 0x34   | 4    | expPoint      | Current experience points                           | 00 00 00 00                                        | 0                                                                       |
+| 0x38   | 4    | Energy        | Contains HP Remaining among other features          | 14 02 A2 00                                        | HP Remaining: (20), Soul Bar Remaining (Unverified): (2)               |
+| 0x3c   | 4    | ownerId       | Owner ID (hex displayed)                            | BF 84 4C 22                                        | 575440063                                                               |
+| 0x40   | 1    | IV_HP         | Individual stat                                     | 12                                                 | 18                                                                      |
+| 0x41   | 1    | IV_Str        | Individual stat                                     | 07                                                 | 7                                                                       |
+| 0x42   | 1    | IV_Spr        | Individual stat                                     | 06                                                 | 6                                                                       |
+| 0x43   | 1    | IV_Def        | Individual stat                                     | 0B                                                 | 11                                                                      |
+| 0x44   | 1    | IV_Spd        | Individual stat                                     | 07                                                 | 7                                                                       |
+| 0x45   | 1    | EV_HP         | EV                                                  | 00                                                 | 0                                                                       |
+| 0x46   | 1    | EV_Str        | EV                                                  | 00                                                 | 0                                                                       |
+| 0x47   | 1    | EV_Spr        | EV                                                  | 00                                                 | 0                                                                       |
+| 0x48   | 1    | EV_Def        | EV                                                  | 00                                                 | 0                                                                       |
+| 0x49   | 1    | EV_Spd        | EV                                                  | 00                                                 | 0                                                                       |
+| 0x4a   | 1    | unknown       | Unknown                                             | 00                                                 | 00                                                                      |
+| 0x4b   | 1    | SC_Str        | Sports Center stat modifier (signed)               | 00                                                 | 0                                                                       |
+| 0x4c   | 1    | SC_Spr        | Sports Center stat modifier (signed)               | 00                                                 | 0                                                                       |
+| 0x4d   | 1    | SC_Def        | Sports Center stat modifier (signed)               | 05                                                 | 5                                                                       |
+| 0x4e   | 1    | SC_Spd        | Sports Center stat modifier (signed)               | FE                                                 | -2                                                                      |
+| 0x4f   | 1    | level         | Level (0–99)                                        | 63                                                 | 99                                                                      |
+| 0x50   | 4    | Special6      | Win Pose Data and More                              | 00 00 00 00                                        | Selected Win Pose: ("Win Pose 1"), Unlocked Win Poses: ("Pose 1")      |
+| 0x54   | 1    | loafAndAi     | High 4 bits = loaf, low 4 bits = AI (Attitude)      | 20                                                 | Loaf: 2 (Casual), Attitude: 0 (N/A)                                    |
+| 0x55   | 7    | SpecialEquip  | Includes special equip data                         | 19 00 00 36 00 30 0B                               | (Default Soultimate)                                                   |
+
