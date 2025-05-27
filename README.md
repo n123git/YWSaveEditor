@@ -10,9 +10,9 @@ A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting *
 ---
 
 ## Table of Contents:
- - See the `docs` folder for technical documentation.
+ - See the `docs` folder for technical documentation (Don't worry, I saved you the effort of trying to go through my terrible code :D).
  - Visit `Releases` for downloads and source code.
- - Use `Issues` or `Pull Requests` to report bugs and suggest features.
+ - Use `Issues` or `Pull Requests` to report bugs and suggest features (or just ping @n123original on discord).
 
 ## Features
 
@@ -89,6 +89,7 @@ A: It depends, but it could (from best to worst):
 ## Dev Info
 
 - Written in **vanilla HTML/JS/CSS** (desktop) and **Lua** via **LovePotion** (3DS).
+   - The `HTML` version uses no external libraries - I couldn't find any that'd actually help that much anyway.
 - Save structure parsing is fully modular and documented.
 - External condition and ID mappings use plain JSON for easy editing.
 
@@ -98,7 +99,7 @@ See `docs/STRUCTURE.md` for the save format documentation.
 
 ### Current Progress
 - Save Data Decryption: 80%
-- Yo-kai Editing: 95%
+- Yo-kai Editing: 97%
 - Save Data Encryption: 30%
 ---
 
