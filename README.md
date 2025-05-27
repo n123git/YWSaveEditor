@@ -74,6 +74,16 @@ A: While the editor is tested and reliable, always **backup your save files** be
 **Q: How do I report bugs or request features?**  
 A: Open an issue on the project’s GitHub repository or contact the maintainers via the provided communication channels.
 
+**Q: Can you help me get a Yo-kai with Infinite Stats?**
+A: No. That would require a mod, the best I can do is the maximum *possible* stats.
+
+**Q: What happens if I set something to an illegal value?**
+A: It depends, but it could (from best to worst):
+* Work perfectly fine,
+* Be extremely buggy,
+* Have the game detect the cheating and ignore the value,
+* Overflow and mess up other things (You don't want a team of pandles with -999HP, do you?)
+
 ---
 
 ## Dev Info
