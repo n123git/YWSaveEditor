@@ -1,7 +1,7 @@
 ### Disclaimer
 - This documentation won't help you if you don't understand what bytes, endianness and hex is. This is for programmers who want to understand how the save file system works for Yo-kai.
 
-- The first Yo-kai starts at offset `0x5108`, and the final Yo-kai is assumed (not confirmed) to end at `0xE2F0`
+- The first Yo-kai starts at offset `0x5108`, and the final Yo-kai's data ends at `0xE2F0`
 - Each Yo-kai has a 92 byte long entry (a maximum offset of `0x5C`).
 - The first 2 bytes refer to #0 (sometimes called `num1`)
 - The next 2 bytes refer to #1 (sometimes called `num2`)
