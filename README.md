@@ -9,7 +9,8 @@ A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting *
 
 ### Disclaimer
 This tool is severly unfinished, I currently do not recommend it, find better ones [here](https://github.com/nobodyF34R/ykw-editors).
-This tool is provided "as is" without any warranties, express or implied. The creator of this tool is not responsible for any damage, data corruption, or data loss that may result from its use. By using this tool, you agree to assume full responsibility for any consequences and waive any claims against the creator or the tool itself for any impact it can/will/may cause.
+This tool is provided "as is" without any warranties, express or implied. The creator of this tool is not responsible for any damage, data corruption, or data loss that may result from its use. By using this tool, you agree to assume full responsibility for any consequences and waive any claims against the creator or the tool itself for any impact it may cause.
+**TL;DR:** This tool *can* mess up your data. It is YOUR responsibility to back things up first and you use it at YOUR OWN risk.
 
 ---
 
