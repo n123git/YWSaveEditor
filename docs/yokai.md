@@ -9,7 +9,7 @@
 - The next 4 bytes refer to the Yo-kai's ID stored as a `Uint32` (32-bit Unsiged Integer). They are stored in `Little Endian` format, so reverse the `Byte Array` to convert to `Big Endian` before interpreting it as decimal.
 - The next 23 bytes refer to the Yo-kai's Nickname, set it to `0x0` if it has none. This can be decoded by treating it as a `UTF-8` string.
 - The next byte is unknown
-- This next 20 bytes aren't fully known in detail yet but are related to factors such as Unlocked Soultimates (Jibanyan) and move levels. The 11th byte refers to the atack level, the 15th refer's to the technique level, and the 18th refers to the soultimate level i.e. `0A` means level 10, `0x01` means level 1 etc.
+- This next 20 bytes aren't fully known in detail yet but are related to factors such as Unlocked Soultimates (Jibanyan), Bony/Fleshy and move levels. The 11th byte refers to the atack level, the 15th refer's to the technique level, and the 18th refers to the soultimate level i.e. `0A` means level 10, `0x01` means level 1 etc. The first nibble of these 20 bytes refer to Bony/Fleshy `1` = Fleshy, `0` = Bony. This stays the same for Type Rare and Version Exclusive Yo-kai. Very simple.
 - These 4 bytes refer to the Current XP toward the next level (not total XP). It should be decoded as a Little-endian `Uint32` (32-bit unsigned integer).
 - These next 4 bytes refer to several things, but the first 2 bytes refer to the remaining HP of the Yo-kai, treat it as a signed 16-bit integer (`int16`). The other 2 bytes is assumed to refer to the Soultimate Guage, although this hasn't been verified yet.
 - The next 4 bytes refer to the `OwnerID`. Which is the Yo-kai's original owner. Stored as hex.
