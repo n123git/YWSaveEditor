@@ -21,11 +21,12 @@ This is extremely beta, I currently do not recommend it, find better ones [here]
 
 - **Game Support**: Fully compatible with Yo-kai Watch 2 save data.
 -  **Cross-Platform**:  
-   - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, and iOS**.  
+   - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, iOS, iPadOS and *more***.
+       - If it can run a web broswer atleast a decade old (ES6), it can run the save editor :D  
    - **3DS Version** — run directly on a homebrewed 3DS for on-the-go editing.
 -  **Feature-Rich**: Includes all features from Togenyan’s editor — and more.
    - Modify Yo-kai, inventory, key items, money, team, medals, and more.
-   - Built-in hex and table views.
+   - Built-in hex editor via `Dev Mode`. (If you don't know what this is, you don't need it)
    - Illegal value detection and suggestion.
 -  **Modding Support**: Built with modularity in mind — ideal for custom Yo-kai, fan translations etc.
    - Easily customize parsing logic, field definitions, or UI components.
