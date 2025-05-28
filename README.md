@@ -8,7 +8,8 @@
 A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, supporting **desktop, mobile and 3DS!** Built to be fast, flexible, and future-proof. Whether you're a competitive player, modder, or just a casual fan — this tool was made for you!
 
 ### Disclaimer
-This is extremely beta, I currently do not recommend it, find better ones [here](https://github.com/nobodyF34R/ykw-editors).
+This tool is severly unfinished, I currently do not recommend it, find better ones [here](https://github.com/nobodyF34R/ykw-editors).
+This tool is provided "as is" without any warranties, express or implied. The creator of this tool is not responsible for any damage, data corruption, or data loss that may result from its use. By using this tool, you agree to assume full responsibility for any consequences and waive any claims against the creator or the tool itself for any impact it may cause.
 
 ---
 
