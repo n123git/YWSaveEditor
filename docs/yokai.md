@@ -1,4 +1,5 @@
 ### Disclaimer
+- This documentation is OUTDATED, an update is coming.
 - This documentation won't help you if you don't understand what bytes, endianness and hex is. This is for programmers who want to understand how the save file system works for Yo-kai.
 
 - The first Yo-kai starts at the `SectionID` `0x07` (7). Check `general.md` for more. This can semi-reliably be approximated to offset `0x5108`.
