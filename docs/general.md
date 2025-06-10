@@ -1,8 +1,8 @@
 # Introduction
 
-The Save System is composed of 2 core little-endian file types:
+The Save System is composed of 2 little-endian file types:
  * `game.yw` files, these hold the main save file data and are named as such, where `game1.yw` is the 1st save file, `game2.yw` is the 2nd, and `game3.yw` is the 3rd and final save file. These store everything not in the `head.yw`'s and use a `SectionID` format.
- * `head.yw` files, these contain the player's name, encryption keys and preview data (everything seen before you click on a save file). Note that editing the preview data is usually pointless as saving will restore it to it's correct value for obvious reasons (It is updated real-time? real-save? idk what to call it XD). More precise documentation can be found in `data/head.md`. These are encrypted identically to `YW1` save files.
+ * `head.yw` files, these contain the player's name, encryption keys along with their preview data (all the data seen before you click on a save file). Note that editing most of the preview data is usually pointless as saving will restore it to it's correct value, although this dosen't apply to all of them. More precise documentation can be found in `data/head.md`. These are encrypted identically to `YW1` save files.
 
 # SectionID Format
 
@@ -42,7 +42,7 @@ Here is a basic example of an entry in that tree (values in hex):
 
 ## Misc Notes
 
-The save file contains some data **before** and **after** the first top-level `Section`. This data is accessed via **absolute** offsets, and is therefore not relative to any `Section`. In *Yo-kai Watch 2*, there are exactly **32 bytes (`0x20`) before** the first `Section` start marker.
+`game*.yw` contains some data **before** and **after** the first top-level `Section`. This data is accessed via **absolute** offsets, and is therefore not relative to any `Section`. In *Yo-kai Watch 2*, there are exactly **32 bytes (`0x20`) before** the first `Section` start marker.
 
 # Common Data Types
 Data is usually stored as either a `uint8`, `uint32` or ocasionally a `uint16` and `uint64`, signed integers are ocasionally used. For a large series of binary data, bitmasks are used. Examples include Trophies and Unlocked Win Poses. A bitmask is a series of binary data used to represent a high amount of binary data i.e.
