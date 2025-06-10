@@ -116,7 +116,7 @@ See `docs` for the save format documentation.
 ## License
 
 This project is licensed under the MIT License.  
-You are free to use, modify, and distribute it as long as you credit the original authors.
+You are free to use, modify, and distribute it as long as you credit the original authors (me :)).
 
 ---
 
