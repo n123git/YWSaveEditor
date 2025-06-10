@@ -48,10 +48,8 @@ The save file contains some data **before** and **after** the first top-level `S
 Data is usually stored as either a `uint8`, `uint32` or ocasionally a `uint16` and `uint64`, signed integers are ocasionally used. For a large series of binary data, bitmasks are used. Examples include Trophies and Unlocked Win Poses. A bitmask is a series of binary data used to represent a high amount of binary data i.e.
 (Arbitrary binary length, DO NOT USE THE LENGTH FOR REFERENCE)
 
-00000000000000000000 → No trophies
-
-11111111111111111111 → All trophies
-
+00000000000000000000 → No trophies<br/>
+11111111111111111111 → All trophies<br/>
 10000000000000000001 → First and last trophy only
 
 Also note that all IDs are stored as a CRC-32 Checksum, for example your Location is stored as the CRC-32 Checksum of the Location's file name. A list of all the file names can be found [here](https://tcrf.net/Notes:Yo-kai_Watch_2)
