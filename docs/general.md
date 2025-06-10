@@ -57,7 +57,12 @@ Data is usually stored as either a `uint8`, `uint32` or ocasionally a `uint16` a
 Also note that all IDs are stored as a CRC-32 Checksum, for example your Location is stored as the CRC-32 Checksum of the Location's file name. A list of all the file names can be found [here](https://tcrf.net/Notes:Yo-kai_Watch_2)
 
 
-
+### Examples
+The data found in the `game*.yw` and `head.yw` files are, in detail documented in their individual pages:
+* [docs/head.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/head.md) for `head.yw`, including Preview Data, Player Name and more.
+* [docs/yokai.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/yokai.md) for Yo-kai
+* [docs/items.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/items.md) for all the different types of Items
+* [docs/general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md) for a TON of generic ones such as Trophies, Crank-a-kai's, Daily Events, and more!
 
 
 ## Unconfirmed
