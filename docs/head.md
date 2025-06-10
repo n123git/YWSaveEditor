@@ -1,4 +1,4 @@
-Disclaimer: **Most** changes to the `head.yw` only affect the preview you see before you enter the save file, NOT the actual save file (This is very important, dont forget :P). Exceptions include the save file names, and decryption seed.
+Disclaimer: **Most** changes to the `head.yw` only affect the preview you see before you enter the save file, NOT the actual save file (This is very important, dont forget :P). Exceptions to this rule include the save file names, and decryption seed.
 Most (known) parts of the `head.yw` are duplicated, with 3 versions corresponding to the 3 save files. An exception to this is the seed located in the head file.
 
 Here are some of the known elements
@@ -8,7 +8,7 @@ Here are some of the known elements
 
 | Offset | Length  | Description                                                                          |
 | ------ | ------- | ------------------------------------------------------------------------------------ |
-| `0x0C` | 0x04    | (Uint32) - A seed ran through a Xorshift-based pseudorandom number generator (PRNG) to derive an AES-128 encryption key, used in part of the save file decryption process. |
+| `0x0C` | 0x04    | (Uint32) - A seed ran through a Xorshift-based pseudorandom number generator (PRNG) to derive an AES-128 encryption key, used in part of the save file decryption process for V2 of the game. |
 
 
 ## Save File Dependant (3 per head)
@@ -18,7 +18,7 @@ Note that the `Offset` in this table assumes the Player name is at `0x00` instea
 | ------ | ------- | ------------------------------------------------------------------------------------ |
 | `0x00` | 0x08    | Player name (UTF-8 LE, fixed length 8 bytes, padded if shorter)                      |
 | `0x09` | 0x1A    | Unknown (18 bytes)                                                                   |
-| `0x1B` | 0x01    | Boolean Main Story Completion (1 bytes)                                              |
+| `0x1B` | 0x01    | Boolean Main Story Completion? (1 bytes, unverified)                                 |
 | `0x1C` | 0x24    | Unknown (10 bytes)                                                                   |
 | `0x25` | 0x01    | **Watch Rank** (`0x05 = S`, `0x04 = A`, `0x03 = B`, etc.)                            |
 | `0x26` | 0x43    | Unknown (67 bytes) — **still part of the 0x60 block total from 0x08–0x68**           |
@@ -37,8 +37,6 @@ Note that the `Offset` in this table assumes the Player name is at `0x00` instea
 | 1       | `0x5390`   | `0x5417` | 136 bytes |
 | 2       | `0x5418`   | `0x549F` | 136 bytes |
 | 3       | `0x54A0`   | `0x5527` | 136 bytes |
-
-
 
 ## Notes (IGNORE)
 The `head.yw` is especially tolerant of illegal values, it allows things like illegal names (disallowed unicode characters appear as a black-box), an hour value of 25 etc
