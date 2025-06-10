@@ -1,6 +1,6 @@
 # Introduction
 
-The Save System is composed of 2 core file types:
+The Save System is composed of 2 core little-endian file types:
  * `game.yw` files, these hold the main save file data and are named as such, where `game1.yw` is the 1st save file, `game2.yw` is the 2nd, and `game3.yw` is the 3rd and final save file. These store everything not in the `head.yw`'s and use a `SectionID` format.
  * `head.yw` files, these contain the player's name, encryption keys and preview data (everything seen before you click on a save file). Note that editing the preview data is usually pointless as saving will restore it to it's correct value for obvious reasons (It is updated real-time? real-save? idk what to call it XD). More precise documentation can be found in `data/head.md`. These are encrypted identically to `YW1` save files.
 
@@ -61,4 +61,4 @@ Also note that all IDs are stored as a CRC-32 Checksum, for example your Locatio
 
 
 ## Unconfirmed
-- After a h2 there is always 32 bits (`0x20`) to skip past. This is correct for Key Items and Yo-kai.
+- After a h2 there is always 32 bytes (`0x20`) to skip past. This is correct for Key Items and Yo-kai.
