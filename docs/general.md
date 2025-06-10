@@ -43,3 +43,10 @@ Here is a basic example of an entry in that tree (values in hex):
 
 ## Unconfirmed
 - After a h2 there is always 32 bits (`0x20`) to skip past. This is correct for Key Items and Yo-kai.
+
+# Common Data Types
+Data is usually stored as either a `uint8`, `uint32` or ocasionally a `uint16` and `uint64`, signed integers are ocasionally used. For a large series of binary data, bitmasks are used. Examples include Trophies and Unlocked Win Poses. A bitmask is a series of binary data used to represent a high amount of binary data i.e.
+(Arbitrary binary length, DO NOT USE THE LENGTH FOR REFERENCE)
+00000000000000000000 → No trophies
+11111111111111111111 → All trophies
+10000000000000000001 → First and last trophy only
