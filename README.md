@@ -13,7 +13,7 @@ This tool is severly unfinished, I currently do not recommend it, find better on
 This tool is provided "as is" without any warranties, express or implied. The creator of this tool is not responsible for any damage, data corruption, or data loss that may result from its use. By using this tool, you agree to assume full responsibility for any consequences and waive any claims against the creator or the tool itself for any impact it may cause.
 **TL;DR:** This tool *can* mess up your data. It is YOUR responsibility to back things up first and you use it at YOUR OWN risk.
 
----
+
 
 ## Table of Contents:
  - See the `docs` folder for technical documentation (Don't worry, I saved you the effort of trying to go through my terrible code :D).
@@ -27,7 +27,7 @@ This tool is provided "as is" without any warranties, express or implied. The cr
    - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, iOS, iPadOS and *more***.
        - If the OS can run a modern web broswer, it can run the web version.
            - The main releases currently requires ES13, although on request a patched version can be shared.
-   - **3DS Version** — run directly on a homebrewed 3DS<sup><a href="#footnote-2" style="text-decoration: none; color: inherit;">2</a></sup> for on-the-go editing. Requires a modern installation of luma, preferably on a stable exploit such as b9s (if you still use a9lh then... cmon, just move on).
+   - **3DS Version** — run directly on a homebrewed 3DS<sup><a href="#footnote-2" style="text-decoration: none; color: inherit;">2</a></sup> for on-the-go editing. Requires a modern installation of luma, preferably on a stable exploit such as b9s (if you still use a9lh then... cmon, just move on). Has direct save file and Checkpoint integration via a simple, effective UI.
 -  **Feature-Rich**: Includes all features from Togenyan’s editor — and more.
    - Modify Yo-kai, inventory, key items, currencies (money, JP, BP/KP, GP), team, medals, and much, much more.
    - Built-in hex editor via `Dev Mode`. (If you don't know what this is, you don't need it)
