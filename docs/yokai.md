@@ -6,13 +6,19 @@ This *should* be obvious, but this is only for Yo-kai editing, for most other ta
 
 ---
 
+**Note**: assume the data is little-endian unless stated otherwise.
 Yo-kai begin at the `SectionID` `0x07` (7). Check `general.md` for more. 
   - This can semi-reliably be approximated to the absolute offset `0x5108`
    
 Each Yo-kai entry is has a length of `0x5C` (92) bytes.
-- The first 2 bytes refer to #0 (sometimes called `num1`)
-- The next 2 bytes refer to #1 (sometimes called `num2`)
-   - It is unknown what these two do, although they are also present in Items, and might be related to sorting.
+
+| Offset | Type    | Name             | Description           | 
+|--------|---------|------------------|-----------------------|
+| 0x00   | uint16  | num1             | #0's complete purpose is unknown, but it is known to be used for sorting/reference. |
+| 0x02   | uint16  | num2             | #1's complete purpose is unknown, but it is known to be used for sorting/reference. |
+| 0x04   | uint32  | YokaiID          | The Yo-kai's ID, note that Type Rares have different IDs, and so do boss vs befriendable Yo-kai. Check my `data` folder for a list of all Yo-kai ID's. 0 = Empty slot.|
+[finish this]
+
 - The next 4 bytes refer to the Yo-kai's ID stored as a `Uint32` (32-bit Unsiged Integer). They are stored in `Little Endian` format, so reverse the `Byte Array` to convert to `Big Endian` before interpreting it as decimal. This being `0` can be used to determine that there is not a Yo-kai present in the current entry.
 - The next 23 bytes refer to the Yo-kai's Nickname, set it to `0x0` if it has none. This can be decoded by treating it as a `UTF-8` string.
 - The next byte is unknown
