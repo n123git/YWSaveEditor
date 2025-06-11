@@ -79,6 +79,3 @@ Each Slot contains:
 | 0x04   | uint32  | ItemID           | The item's ItemID, check my `data` folder for a list of all ItemIDs.|
 | 0x08   | uint8   | ItemCount       | The quantity of said item. |
 
---
-
-[TODO: FINSIH THIS PAGE]
