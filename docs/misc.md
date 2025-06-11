@@ -3,14 +3,14 @@
 
 # Table of Contents
 
-* [Section 0x01 — Player Position, Appearance, Uses etc](#section-0x01--player-position-appearance-uses-etc)
+* [Section 0x01 — Player Position, Appearance, Uses etc](#section-0x01--player-position-appearance-medallium-data-uses-etc)
 * [Section 0x09 — Currency and Points (misc9)](#section-0x09--currency-and-points-misc9)
 
 ---
 
 ## Key Section IDs
 
-- Section `0x01` — Player Position, Appearance, Uses etc
+- Section `0x01` — Player Position, Appearance, Medallium Data, Uses etc
 
 | Field   | Notes                        | Section ID | Offset  |
 | ------- | ---------------------------- | ---------- | ------- |
