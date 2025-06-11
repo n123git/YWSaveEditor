@@ -9,9 +9,9 @@ Items can be split into:
 
 These categories define where in the save files they are placed:
 
-Consumables: `0x04`
-Equipment: `0x05`
-Key Items: `0x06`
+Consumables: `0x04`<br/>
+Equipment: `0x05`<br/>
+Key Items: `0x06`<br/>
 Souls: `0x13`
 
 [TODO: FINSIH THIS PAGE]
