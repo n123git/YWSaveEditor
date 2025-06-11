@@ -1,3 +1,5 @@
+**Note**: this documentation documents the `head.yw`, for 99% of save-editing you instead want to consult [general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md) first. 
+
 Disclaimer: **Most** changes to the `head.yw` only affect the preview you see before you enter the save file, NOT the actual save file (This is very important, dont forget :P). Exceptions to this rule include the save file names, and decryption seed.
 Most (known) parts of the `head.yw` are duplicated, with 3 versions corresponding to the 3 save files. An exception to this is the seed located in the head file.
 
