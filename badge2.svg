@@ -8,6 +8,6 @@
   <!-- Text: white on both sides -->
   <g fill="white" text-anchor="middle" font-family="Verdana" font-size="11">
     <text x="30" y="14">platform</text>
-    <text x="85" y="14">LUA</text>
+    <text x="85" y="14">3DS - LUA</text>
   </g>
 </svg>
