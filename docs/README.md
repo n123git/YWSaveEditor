@@ -1,4 +1,4 @@
-These docs document the save file system in *Yo-kai Watch 2*.
+These docs document the save file system in *Yo-kai Watch 2*. Namely, everything within the scope of this save editor (Suggestions are welcome at @n123original on discord)
 * [general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md) contains general useful info, start here.
 * [head.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/head.md) documents `head.yw`, check this last.
 * [yokai.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/yokai.md) documents Yo-kai.
