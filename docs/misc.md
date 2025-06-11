@@ -34,5 +34,5 @@
 | uint32 | GP (Gym Points)                       | `0x09`     | `0x3C` |
 
 ---
-
+[TODO: RESTORE MISC8; ADD TROPHY+INF_TUNNEL_SCORE]
 
