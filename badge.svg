@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="60" height="20">
-  <rect width="60" height="20" fill="aqua" rx="3" />
-  <text x="30" y="14" fill="white" font-family="Verdana" font-size="11" text-anchor="middle">LUA</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="20">
+  <!-- Full rounded badge shape -->
+  <rect width="110" height="20" rx="3" fill="#555"/>
+
+  <!-- Right section (aqua) overlay -->
+  <rect x="60" width="50" height="20" fill="aqua"/>
+
+  <!-- Text: white on both sides -->
+  <g fill="white" text-anchor="middle" font-family="Verdana" font-size="11">
+    <text x="30" y="14">platform</text>
+    <text x="85" y="14">LUA</text>
+  </g>
 </svg>
