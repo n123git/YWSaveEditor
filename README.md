@@ -6,7 +6,7 @@
 
 # Yo-kai Watch 2 Save Editor
 
-A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, which supports **desktop, mobile and the 3DS!<sup><a href="#footnote-1" style="text-decoration: none; color: inherit;">1</a></sup>** Built to be fast, flexible, and future-proof. Whether you're a competitive player, modder, or just a casual fan — this tool was made for you!
+A powerful, modern, and modular **Save Editor for Yo-kai Watch 2**, which supports **desktop, mobile and the 3DS!<sup><a href="#footnote-1" style="text-decoration: none; color: inherit;">1</a></sup>** Built to be reliable yet feature-rich. Whether you're a competitive player, modder, or just a casual fan — this tool was made for you!
 
 ### Disclaimer
 This tool is severly unfinished, I currently do not recommend it, find better ones [here](https://github.com/nobodyF34R/ykw-editors).
@@ -25,9 +25,9 @@ This tool is provided "as is" without any warranties, express or implied. The cr
 - **Game Support**: Fully compatible with Yo-kai Watch 2 save data.
 -  **Cross-Platform**:  
    - **HTML Version** — runs locally in your browser, supports **Windows, macOS, Linux, Android, iOS, iPadOS and *more***.
-       - If the OS can run a modern web broswer, it can run the save editor :D
-           - The main releases currently requires ES13, although on request I can share a patched version for any ES requirement you need to satisfy :D (Even ES1).
-   - **3DS Version** — run directly on a homebrewed 3DS for on-the-go editing. Requires a modern installation of luma, preferably on a stable exploit such as b9s (if you still use a9lh then... cmon, just move on).
+       - If the OS can run a modern web broswer, it can run the web version.
+           - The main releases currently requires ES13, although on request a patched version can be shared.
+   - **3DS Version** — run directly on a homebrewed 3DS<sup><a href="#footnote-2" style="text-decoration: none; color: inherit;">2</a></sup> for on-the-go editing. Requires a modern installation of luma, preferably on a stable exploit such as b9s (if you still use a9lh then... cmon, just move on).
 -  **Feature-Rich**: Includes all features from Togenyan’s editor — and more.
    - Modify Yo-kai, inventory, key items, currencies (money, JP, BP/KP, GP), team, medals, and much, much more.
    - Built-in hex editor via `Dev Mode`. (If you don't know what this is, you don't need it)
@@ -130,4 +130,5 @@ You are free to use, modify, and distribute it as long as you credit the origina
 - The community — for reverse engineering efforts and feedback.
 
 ## Footnotes
-<a name="footnote-1"></a>1. By 3DS, I am referring to the 3DS and 2DS family of systems, including but not limited to the "New" remakes. Although note that the device in question must be homebrewed. See [this](https://3ds.hacks.guide) page for instructions on how to homebrew your device, and see [this](https://www.nintendo.com/en-gb/Hardware/Nintendo-3DS-Family/Nintendo-3DS-Family-94560.html) for more information on the family of systems.
+<a name="footnote-1"></a>1. By 3DS, I am referring to the 3DS and 2DS family of systems, including but not limited to the "New" remakes. See [this](https://www.nintendo.com/en-gb/Hardware/Nintendo-3DS-Family/Nintendo-3DS-Family-94560.html) for more information on the family of systems.<br/>
+<a name="footnote-2"></a>2. A homebrewed 3DS refers to a 3DS which has had cfw (Custom Firmware) installed to remove limitations - namely signature checks, allowing for custom applications. You can mod ANY 3DS by following the instructions [here](https://3ds.hacks.guide).
