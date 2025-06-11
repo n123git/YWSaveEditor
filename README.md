@@ -50,7 +50,7 @@ This tool is provided "as is" without any warranties, express or implied. The cr
 * After the download (for obvious reasons).
 
 ### ➤ 3DS Version
-- [Download `.cia`](#)
+- [Download `.cia`](#)  <!-- I will release the 3DS version *once* i'm satisfied with the web ver -->
 
 ---
 
@@ -58,7 +58,7 @@ This tool is provided "as is" without any warranties, express or implied. The cr
 
 1. **Backup your save file!**  
    Mistakes can corrupt saves — always keep a copy.
-2. **Load your save** via the file picker (HTML) or automatically (3DS).
+2. **Load your save** via the file picker (HTML) or via the save selection panel for the 3DS (Has Checkpoint-integration).
 3. Use the intuitive interface or hex editor to make your changes.
 4. Press **Save** and reinsert the save into your game.
 
