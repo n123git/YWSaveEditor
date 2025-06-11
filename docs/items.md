@@ -1,17 +1,39 @@
 **Note**: this should be quite obvious, but this is only for items, for most features consult [general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md).
 
+# General
+
 Items can be split into:
 * Consumables (Everything that isn't the below)
 * Equipment (Equipment.... obvious enough)
 * Critters (Insects and Fish)
 * Souls (Souls... pretty obvious)
-* Key Items (Note: Internally Key Items that display an image are considered a different category, but this dosen't apply to save editing)
+* Key Items (Note: Internally Key Items that display an image on click such as maps, are considered a different category, but this dosen't apply to save editing)
 
-These categories define where in the save files they are placed:
+These categories define what `SectionID` they are relative to, this defines where they are placed. Consult [general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md) for more info.
 
-Consumables: `0x04`<br/>
-Equipment: `0x05`<br/>
-Key Items: `0x06`<br/>
-Souls: `0x13`
+* Consumables: `0x04`
+* Equipment: `0x05`
+* Key Items: `0x06`
+* Souls: `0x3000` from `0x13`
+
+---
+
+## Souls
+
+Each Soul is `0xC` long, and begins at offset `0x3000` relative to its `SectionID`. Also note that there are `100` Soul Slots in a save file, meaning that it ends at `0x4B0` (13488) from its `SectionID`.
+
+Each Soul contains:
+
+<!-- you wont believe how long it took me to realise each row can have a different length -->
+<!-- I also didnt know that comments malformed a table but whatever -->
+| Offset | Type    | Name             | Description           | 
+|--------|---------|------------------|-----------------------|
+| 0x00   | uint16  | num1             | #0's complete purpose is unknown, but it is known to be used for sorting/reference. |
+| 0x02   | uint16  | num2             | #1's complete purpose is unknown, but it is known to be used for sorting/reference. |
+| 0x04   | uint32  | ItemID           | The item's ItemID, check my `data` folder for a list of all ItemID's.|
+| 0x08   | uint16  | XPUntilLevelUp   | The amount of XP obtained *towards* the next level, not in total. |
+| 0x0A   | uint16  | Level            | The Souls level. |
+
+---
 
 [TODO: FINSIH THIS PAGE]
