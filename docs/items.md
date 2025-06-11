@@ -36,4 +36,28 @@ Each Soul contains:
 
 ---
 
+## Key Items
+
+Each Key Item is `0x8` long, and begins at offset `0x2000` relative to its `SectionID`. Also note that there are `180` Key Item Slots in a save file.
+
+Each Key Item contains:
+
+| Offset | Type    | Name             | Description           | 
+|--------|---------|------------------|-----------------------|
+| 0x00   | uint16  | num1             | #0's complete purpose is unknown, but it is known to be used for sorting/reference. |
+| 0x02   | uint16  | num2             | #1's complete purpose is unknown, but it is known to be used for sorting/reference. |
+| 0x04   | uint32  | ItemID           | The item's ItemID, check my `data` folder for a list of all ItemID's.|
+
+--
+
+## Equipment
+
+Each Equipment is `0x10` long, and begins at offset `0x1000` relative to its `SectionID`. Also note that there are `90` Equipment Slots in a save file.
+
+Each Equipment contains:
+
+
+
+--
+
 [TODO: FINSIH THIS PAGE]
