@@ -29,9 +29,17 @@
 
 | Field  | Notes                                 | Section ID | Offset |
 | ------ | ------------------------------------- | ---------- | ------ |
-| uint32 | Money (100 = 100 yen / \$1 / £1 / €1) | `0x09`     | `0x34` |
-| uint32 | JP (Jungle Points)                    | `0x09`     | `0x38` |
-| uint32 | GP (Gym Points)                       | `0x09`     | `0x3C` |
+| uint32 | Money (100 = 100 yen / \$1 / £1 / €1) (max:999999)| `0x09`     | `0x34` |
+| uint32 | JP (Jungle Points) (max:999999)       | `0x09`     | `0x38` |
+| uint32 | GP (Gym Points) (max:999999)          | `0x09`     | `0x3C` |
+
+---
+
+- Section `0x14` — High Scores (`misc8`)
+
+| Field  | Notes                                 | Section ID | Offset |
+| ------ | ------------------------------------- | ---------- | ------ |
+| uint24 | Infinite Tunnel High Score (max:999999) | `0x14`     | `0x70` |
 
 ---
 [TODO: RESTORE MISC8; ADD TROPHY+INF_TUNNEL_SCORE]
