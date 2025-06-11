@@ -1,5 +1,5 @@
 
- **Note:** Please review `general.md` before this.
+ **Note:** Please review [general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md) before this.
 
 # Table of Contents
 
