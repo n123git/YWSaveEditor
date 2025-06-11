@@ -1,3 +1,5 @@
+This *should* be obvious, but this is only for Yo-kai editing, for most other tasks consult [general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md) or [head.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/head.md).
+
 ### Disclaimer
 - This documentation is OUTDATED, an update is coming.
 - This documentation won't help you if you don't understand what bytes, endianness and hex is. This is for programmers who want to understand how the save file system works for Yo-kai.
