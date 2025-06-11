@@ -3,7 +3,7 @@
   <rect width="110" height="20" rx="3" fill="#555"/>
 
   <!-- Right section (aqua) overlay -->
-  <rect x="60" width="50" height="20" fill="aqua"/>
+  <rect x="60" width="50" height="20" rx="3" fill="#00AAAA"/>
 
   <!-- Text: white on both sides -->
   <g fill="white" text-anchor="middle" font-family="Verdana" font-size="11">
