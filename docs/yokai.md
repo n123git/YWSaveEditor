@@ -2,10 +2,14 @@ This *should* be obvious, but this is only for Yo-kai editing, for most other ta
 
 ### Disclaimer
 - This documentation is OUTDATED, an update is coming.
-- This documentation won't help you if you don't understand what bytes, endianness and hex is. This is for programmers who want to understand how the save file system works for Yo-kai.
+- This documentation won't help you if you don't understand basic hex constructs and endianness.
 
-- The first Yo-kai starts at the `SectionID` `0x07` (7). Check `general.md` for more. This can semi-reliably be approximated to offset `0x5108`.
-- Each Yo-kai has a 92 byte long entry (a length of `0x5C`).
+---
+
+Yo-kai begin at the `SectionID` `0x07` (7). Check `general.md` for more. 
+  - This can semi-reliably be approximated to the absolute offset `0x5108`
+   
+Each Yo-kai entry is has a length of `0x5C` (92) bytes.
 - The first 2 bytes refer to #0 (sometimes called `num1`)
 - The next 2 bytes refer to #1 (sometimes called `num2`)
    - It is unknown what these two do, although they are also present in Items, and might be related to sorting.
