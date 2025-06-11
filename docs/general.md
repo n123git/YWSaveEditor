@@ -18,7 +18,7 @@ These save files are mostly nested sequences of Sections. The `SectionID` struct
 
 ## **Section ID (ID)**
 
-This is a `Uint8` (0-255) useed to uniquely identify the section, similar to a `UUID`. For example, `0x06` is the SectionID for Key Items, which is ALWAYS correct, despite the exact offset being extremely inconsistent, and therefore cannot directly be used.
+This is a `Uint8` (0-255) used to uniquely identify the section, similar to a `UUID`. For example, `0x06` is the SectionID for Key Items, which is constant, and NEVER varies between save files, despite the exact offset being inconsistent, and therefore cannot directly be used.
 
 ### Example tree structure (abstract):
 
