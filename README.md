@@ -44,8 +44,10 @@ This tool is provided "as is" without any warranties, express or implied. The cr
 
 ### ➤ HTML Version
 - [Download the Latest Release](https://github.com/n123git/YWSaveEditor/releases/latest)
-- Open the `.html` file in ANY modern web browser, whether it be Chrome, Firefox or ~~Microsoft Edge~~. This works on every web browser younger than a decade (ES8+)
-- No installation, shady links or internet connection required!
+- Open the `.html` file in ANY modern web browser, whether it be Chrome, Firefox or ~~Microsoft Edge~~. This works on every up-to-date web browser (ES13+)
+- No installation, shady links or internet connection* required!
+<br/>
+* After the download (for obvious reasons).
 
 ### ➤ 3DS Version
 - [Download `.cia`](#)
@@ -109,7 +111,9 @@ See `docs` for the save format documentation.
 ### Current Progress
 - Save Data Decryption: 80%
 - Yo-kai Editing: 97%
-- Key Items Editing: 100%
+ - Items Editing: 90%
+ - Trophy Editing: 99%
+ - Misc Editing: 30%
 - SectionID Management: 100%
 - Save Data Encryption: 30%
 ---
@@ -118,8 +122,6 @@ See `docs` for the save format documentation.
 
 This project is licensed under the MIT License.  
 You are free to use, modify, and distribute it as long as you credit the original authors (me :)).
-
----
 
 ## Credits
 
