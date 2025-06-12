@@ -63,8 +63,8 @@ Each Equipment contains:
 | 0x00   | uint16  | num1             | #0's complete purpose is unknown, but it is known to be used for sorting/reference. |
 | 0x02   | uint16  | num2             | #1's complete purpose is unknown, but it is known to be used for sorting/reference. |
 | 0x04   | uint32  | ItemID           | The item's ItemID, check my `data` folder for a list of all ItemIDs.|
-| 0x08   | uint8   | ItemCountA       | The amount of (unequipped?) equipment. |
-| 0x04   | uint8   | ItemCountB        | The amount of (equipped?) equipment.|
+| 0x08   | uint8   | ItemCountA       | Quantity of equipment. |
+| 0x04   | uint8   | ItemCountB       | Quantity of equipped equipment.|
 
 ## Consumables+Critters
 
