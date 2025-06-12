@@ -31,15 +31,17 @@ Root (ID: 1, size: 64)
 
 Here is a basic example of an entry in that tree (values in hex):
 
-| Offset | Bytes         | Meaning                  |
-| ------ | ------------- | ------------------------ |
-| 0x00   | `FE FF`       | Start Marker (0xFFFE)    |
-| 0x02   | `00 00`       | ??? (0x0000)             |
-| 0x04   | `40 00 00`    | Size=0x00000040          |
-| 0x07   | `01`          | ID=0x01                  |
-| 0x08   | (data)        | Payload of section ID 1  |
-| ...    | ...           | Data. Can be nested.     |
-| 0x48   | `FF FE`       | End Marker (0xFEFF)      |
+| Offset | Bytes                                                   | Meaning                                |
+| ------ | ------------------------------------------------------- | -------------------------------------- |
+| 0x00   | `FE FF 00 00`                                           | `h1` = Section Start Marker (`0xFFFE`) |
+| 0x04   | `F1 34 15 01`                                           | `h2` = Section Header Data             |
+|        | → Reversed: `01 15 34 F1` (little-endian to big-endian) |                                        |
+|        | → Full value: `0x011534F1`                              |                                        |
+|        | → ID = **`0xF1`** (last byte)                           |                                        |
+|        | → Size = **`0x011534`** (upper 3 bytes = 70964 bytes)   |                                        |
+| 0x08   | (data)                                                  | Payload of section ID 1                |
+| ...    | ...                                                     | Data. Can be nested.                   |
+| 0x1153C| `FF FE`                                                 | End Marker (0xFEFF)                    |
 
 
 ## Misc Notes
