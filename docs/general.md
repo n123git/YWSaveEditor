@@ -33,11 +33,13 @@ Here is a basic example of an entry in that tree (values in hex):
 
 | Offset | Bytes         | Meaning                  |
 | ------ | ------------- | ------------------------ |
-| 0x00   | `FE FF 00 00` | Start Marker (0xFFFE)    |
-| 0x04   | `40 00 00 01` | Size=0x00000040, ID=0x01 |
+| 0x00   | `FE FF`       | Start Marker (0xFFFE)    |
+| 0x02   | `00 00`       | ??? (0x0000)             |
+| 0x04   | `40 00 00`    | Size=0x00000040          |
+| 0x07   | `01`          | ID=0x01                  |
 | 0x08   | (data)        | Payload of section ID 1  |
 | ...    | ...           | Data. Can be nested.     |
-| 0x48   | `FF FE 00 00` | End Marker (0xFEFF)      |
+| 0x48   | `FF FE`       | End Marker (0xFEFF)      |
 
 
 ## Misc Notes
