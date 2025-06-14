@@ -12,16 +12,17 @@
 
 - Section `0x01` — Player Position, Appearance, Medallium Data, Uses etc
 
-| Field   | Notes                        | Section ID | Offset  |
-| ------- | ---------------------------- | ---------- | ------- |
-| float32 | X Coordinate                 | `0x01`     | `0x04`  |
-| float32 | Y Coordinate                 | `0x01`     | `0x08`  |
-| float32 | Z Coordinate                 | `0x01`     | `0x0C`  |
-| uint32  | Location                     | `0x01`     | `0x18`  |
-| uint32  | Equipped Wallpaper           | `0x01`     | `0x27`  |
-| uint8   | Crank-a-kai Cranks Remaining | `0x01`     | `0x170` |
-| uint8   | Bicycle Skin Equipped        | `0x01`     | `0x186` |
-| uint8   | Bicycle Bell Equipped        | `0x01`     | `0x187` |
+| Field    | Notes                        | Section ID | Offset  |
+| -------- | ---------------------------- | ---------- | ------- |
+| float32  | +Z? Coordinate               | `0x01`     | `0x04`  |
+| float32  | +Y Coordinate                | `0x01`     | `0x08`  |
+| float32  | +X Coordinate                | `0x01`     | `0x0C`  |
+| uint32   | Location (Area)              | `0x01`     | `0x18`  |
+| uint32   | Equipped Wallpaper           | `0x01`     | `0x27`  |
+| uint8    | Crank-a-kai Cranks Remaining | `0x01`     | `0x170` |
+| uint8    | Bicycle Skin Equipped        | `0x01`     | `0x186` |
+| uint8    | Bicycle Bell Equipped        | `0x01`     | `0x187` |
+|bitfield48| Treasure Chests opened       | `0x01`     | `0x3E0` |
 
 ---
 
@@ -42,5 +43,5 @@
 | uint24 | Infinite Tunnel High Score (max:999999) | `0x14`     | `0x70` |
 
 ---
-[TODO: RESTORE MISC8; ADD TROPHY+INF_TUNNEL_SCORE]
+[TODO: RESTORE MISC8; ADD TROPHY]
 
