@@ -1,14 +1,13 @@
 This *should* be obvious, but this is only for Yo-kai editing, for most other tasks consult [general.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/general.md) or [head.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/head.md).
 
-### Disclaimer
-- This documentation is OUTDATED, an update is coming.
-- This documentation won't help you if you don't understand basic hex constructs and endianness.
+
+This documentation won't help you if you don't understand basic hex constructs and endianness.
 
 ---
 
-**Note**: assume the data is little-endian unless stated otherwise.
+**Note**: assume the data is little-endian unless stated otherwise and the "Offsets" are in bytes, NOT bits.
 Yo-kai begin at the `SectionID` `0x07` (7). Check `general.md` for more. 
-  - This can semi-reliably be approximated to the absolute offset `0x5108`
+  - This can semi-reliably be approximated to the absolute offset `0x5108` 
    
 Each Yo-kai entry is has a length of `0x5C` (92) bytes.
 
@@ -17,25 +16,36 @@ Each Yo-kai entry is has a length of `0x5C` (92) bytes.
 | 0x00   | uint16  | num1             | #0's complete purpose is unknown, but it is known to be used for sorting/reference. |
 | 0x02   | uint16  | num2             | #1's complete purpose is unknown, but it is known to be used for sorting/reference. |
 | 0x04   | uint32  | YokaiID          | The Yo-kai's ID, note that Type Rares have different IDs, and so do boss vs befriendable Yo-kai. Check my `data` folder for a list of all Yo-kai ID's. 0 = Empty slot.|
-[finish this]
+| 0x08   | uint24  | Nickname         | The Yo-kai's Nickname in UTF-8. `0x0` = No Nickname. Unused characters render as a filled black box.|
+| 0x20   | uint20  | Misc             | The 11th byte refers to the atack level, the 15th refer's to the technique level, and the 18th refers to the soultimate level i.e. `0A`= level 10.|
+| 0x34   | uint32  | XP               | The Current XP *towards* the next level, NOT the total XP. |
+| 0x38   | int16   | HP Remaining     | The Current amount of HP Remaining. |
+| 0x3A   | int16   | Soul Remaining   | The Current amount of Soul Remaining. |
+| 0x3C   | uint32  | OwnerID          | The Owner of the Yo-kai, used for trading. |
+| 0x40   | uint8   | IV_HP            | IV for HP. | 
+| 0x41   | uint8   | IV_Str           | IV for STR (Strength).| 
+| 0x42   | uint8   | IV_Spr           | IV for SPR (Spirit). | 
+| 0x43   | uint8   | IV_Def           | IV for DEF (Defense).| 
+| 0x44   | uint8   | IV_Spd           | IV for SPD (Speed).|
+| 0x45   | uint8   | EV_HP            | EV for HP. | 
+| 0x46   | uint8   | EV_Str           | EV for STR (Strength).| 
+| 0x47   | uint8   | EV_Spr           | EV for SPR (Spirit). | 
+| 0x48   | uint8   | EV_Def           | EV for DEF (Defense).| 
+| 0x49   | uint8   | EV_Spd           | EV for SPD (Speed).|
+| 0x4A   | uint8   | unknown          | Unknown. |
+| 0x4B   | int8    | SC_Str           | SC buff/nerf for STR (Strength). |
+| 0x4C   | int8    | SC_Spr           | SC buff/nerf for SPR (Spirit). |
+| 0x4D   | int8    | SC_Def           | SC buff/nerf for DEF (Defense). |
+| 0x4E   | int8    | SC_Spd           | SC buff/nerf for SPD (Speed).|
+| 0x4F   | uint8   | Level            | The Yo-kai's level usually 0-99 (`0x0`-`0x63`). Levels higher than `0x63` will automatically be changed to 99 (`0x63`) by the game. |
+| 0x50   | uint32  | Win Pose Data    | The first byte is the selected pose, while the rest forms a bitmask of unlocked poses. Refer to my `data` folder for pose lookup code, as it is too complicated to explain here. |
+| 0x54   | uint8   | Loaf Data        | Loafing behavior (high 4 bits) and Attitude (low 4 bits). Check the `data` dir for more information regarding decoding. |
 
-- The next 4 bytes refer to the Yo-kai's ID stored as a `Uint32` (32-bit Unsiged Integer). They are stored in `Little Endian` format, so reverse the `Byte Array` to convert to `Big Endian` before interpreting it as decimal. This being `0` can be used to determine that there is not a Yo-kai present in the current entry.
-- The next 23 bytes refer to the Yo-kai's Nickname, set it to `0x0` if it has none. This can be decoded by treating it as a `UTF-8` string.
-- The next byte is unknown
-- This next 20 bytes aren't fully known in detail yet but are related to factors such as Unlocked Soultimates (Jibanyan), and move levels. The 11th byte refers to the atack level, the 15th refer's to the technique level, and the 18th refers to the soultimate level i.e. `0A` means level 10, `0x01` means level 1 etc.
-- These 4 bytes refer to the Current XP toward the next level (not total XP). It should be decoded as a Little-endian `Uint32` (32-bit unsigned integer).
-- These next 4 bytes refer to 2 seperate but similar things,  the first 2 bytes refer to the remaining HP of the Yo-kai, treat it as a signed 16-bit integer (`int16`). The other 2 bytes is assumed to refer to the Soultimate Guage, although this hasn't been verified yet.
-- The next 4 bytes refer to the `OwnerID`. Which is the Yo-kai's original owner. Stored as hex.
-- The next 5 bytes are IV's. Handle these as normal hex i.e. `0A` = 10, `01` = 1 etc
-- The next 5 bytes are EV's. Again, handle these as normal hex i.e. `0A` = 10, `01` = 1 etc
-- The next byte is unknown
-- The next 4 bytes are Sport Center buffs, they store what values to change i.e. buffing one stat might give increase it's value by 5, and decrease another stat's value by 2. Note that because of the potential for negatives they must be interpreted as an `Int8` (Signed 8-bit Integer).
-- The next byte is the Yo-kai's Level, it is intended to go from (0–99), but can technically reach level `255`.
-- The next 4 bytes include several things, such as Win Pose data; The first byte is the selected pose, while the rest forms a bitmask of unlocked poses. Refer to my `data` folder for pose lookup code, as it is too complicated to explain here.
-- The next byte combines Loafing behavior (high 4 bits) and Attitude (low 4 bits). Check the `data` dir for more information regarding decoding.
-- The next 7 bytes include several pieces of data, such as the current Soultimate for Jibanyan and Alliance (BS/FS). The first (high) nibble of the 1st out of the 7 bytes refer to Bony/Fleshy `1` = Fleshy/Wicked, `0` = Bony. This stays the same for Type Rare and Version Exclusive Yo-kai. Very simple.
+- The next 7 bytes include several pieces of data, such as the current Soultimate for Jibanyan and Alliance (BS/FS). The first (high) nibble of the 1st out of the 7 bytes refer to Bony/Fleshy `1` = Fleshy/Wicked, `0` = Bony. This stays the same for Type Rare and Version Exclusive Yo-kai, but cannot be used for Jibanyan (and potentially other Auto-befriend Yo-kai). Very simple.
 
-Example:
+
+
+Outdated Example:
      | Offset | Size | Field         | Description                                         | Raw Hex Bytes                                      | Decoded                                                                 |
 |--------|------|---------------|-----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------------------------|
 | 0x00   | 2    | num1          | Index #0                                            | 7B 00                                              | 123                                                                     |
