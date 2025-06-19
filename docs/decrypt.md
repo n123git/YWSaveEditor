@@ -10,5 +10,25 @@ In the international versions, this format affects save files last saved in v1.0
 This format affects save files last saved in v2.0 (or higher due to JP version history). Note that all copies of _Psychic Specters_ or _Shin'uchi_ (regardless of update) are v2.0. A save file will have v2.0 marked on it in-game if it is. The main difference is 
 
 
-# Header FIles (head.yw)
+Here is a slightly readjusted snippet from Togenyan's save editor, the appropriate license is placed next to this `.md`
+```cpp
+if (encrypted) {  // Is it an encrypted save
+        this->mgr->setAeskey("5+NI8WVq09V7LI5w"); // test with the hardcoded key used in v1.0 saves
+        if ((status = this->mgr->loadFile(file)) != Error::SUCCESS) {
+            // If that fails, assume Ganso / Honke ver 2.x OR Shin'uchi
+            if ((status = this->mgr->loadKeyFromHeadFile(file)) == Error::SUCCESS) {
+                status = this->mgr->loadFile(file);
+            }
+        }
+    } else { // If decrypted
+        status = this->mgr->loadDecryptedFile(file); // just edit it
+    }
+    if (status != Error::SUCCESS) { // if it fails
+        QMessageBox::critical(this, tr("ERROR"), QString(tr("ERROR (%1)")).arg(status)); // have a tantrum
+        this->mgr->setAeskey(prevKey); // restore the key
+        return; // exit
+    }
+```
+
+# Header Files (head.yw)
 These are decrypted in the same way as yw1 saves, specifically.....
