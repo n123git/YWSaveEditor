@@ -61,6 +61,7 @@ Also note that all IDs are saved as their CRC-32 Checksum. An example of this is
 ### Examples
 The data found in the `game*.yw` and `head.yw` files are, in detail documented in their individual pages:
 * [docs/head.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/head.md) for `head.yw`, including Preview Data, Player Name and more.
+* [docs/decrypt.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/decrypt.md) for encryption/decryption documentation.
 * [docs/yokai.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/yokai.md) for Yo-kai
 * [docs/items.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/items.md) for all the different types of Items
 * [docs/misc.md](https://github.com/n123git/YWSaveEditor/blob/main/docs/misc.md) for a TON of generic ones such as Trophies, Crank-a-kai's, Daily Events, and more!
