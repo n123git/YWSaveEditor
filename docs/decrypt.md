@@ -10,7 +10,7 @@ In the international versions, this format affects save files last saved in v1.0
 This format affects save files last saved in v2.0 (or higher due to JP version history). Note that all copies of _Psychic Specters_ or _Shin'uchi_ (regardless of update) are v2.0. A save file will have v2.0 marked on it in-game if it is. The main difference is 
 
 
-Here is a slightly readjusted snippet from Togenyan's save editor, the appropriate license is placed next to this `.md`
+Here is a slightly readjusted snippet from Togenyan's save editor, the appropriate license is placed next to this `.md`. This snippet detects which version the save file is, and adjusts it accordingly
 ```cpp
 if (encrypted) {  // Is it an encrypted save
         this->mgr->setAeskey("5+NI8WVq09V7LI5w"); // test with the hardcoded key used in v1.0 saves
