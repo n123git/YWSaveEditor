@@ -10,7 +10,7 @@ Here are some of the known elements
 
 | Offset | Length  | Description                                                                          |
 | ------ | ------- | ------------------------------------------------------------------------------------ |
-| `0x0C` | 0x04    | (Uint32) - A seed ran through a Xorshift-based pseudorandom number generator (PRNG) to derive an AES-128 encryption key, used in part of the save file decryption process for V2 of the game. |
+| `0x0C` | 0x04    | (Uint32) - A seed ran through a Xorshift-based pseudorandom number generator (PRNG) to derive an AES-128 encryption key, used in part of the decryption process for V2 save files. |
 
 
 ## Save File Dependant (3 per head)
