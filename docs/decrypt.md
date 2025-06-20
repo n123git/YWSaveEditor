@@ -93,7 +93,8 @@ Error::ErrorCode SaveManager::loadFile(QString path)
 ```
 
 # Header Files (head.yw)
-These are decrypted in the same way as yw1 saves, specifically they are decrypted identically to v1.0 saves but without the AES encryption at ALL, just `YWCipher`. Here is an example from Togenyan's YW1 Save Editor:
+These are decrypted in the same way as yw1 saves, specifically they are decrypted identically to v1.0 saves but without the AES encryption at ALL, just `YWCipher`. Here is an example from Togenyan and Nobody_F34R's YW1 Save Editor:
+
 ```cpp
 Error::ErrorCode SaveManager::loadFile(QString path)
 {
@@ -104,22 +105,24 @@ Error::ErrorCode SaveManager::loadFile(QString path)
     if (!file.open(QIODevice::ReadOnly)) {
         return Error::FILE_CANNOT_OPEN;
     }
-
+   
     QByteArray bodydata = file.readAll();
     file.close();
 
+    // the above isn't important.
+
     // decrypt second layer (YWCipher)
-    QByteArray ywkeyBytes = bodydata.right(4);
-    QByteArray *decryptedSecond = SaveManager::processYW(bodydata, false);
+    QByteArray ywkeyBytes = bodydata.right(4); // get the 4 bytes, not bits
+    QByteArray *decryptedSecond = SaveManager::processYW(bodydata, false); // decrypt via processYW
     if (!decryptedSecond) {
         return Error::DECRYPTION_YW_FAILED;
     }
 
     // strip CRC + key
-    decryptedSecond->resize(decryptedSecond->size() - 8);
+    decryptedSecond->resize(decryptedSecond->size() - 8); // remove the CRC+key
 
     // split into sections
-    Error::ErrorCode status = this->parseSavedata(*decryptedSecond);
+    Error::ErrorCode status = this->parseSavedata(*decryptedSecond); // ignore this, this is unimportant for decryption, as it is for SectionID parsing, see my general.md for more info
 
     delete decryptedSecond;
     if (status != Error::SUCCESS) {
@@ -130,7 +133,7 @@ Error::ErrorCode SaveManager::loadFile(QString path)
     this->filepath = path;
     this->ywcipherKey = ywkeyBytes;
     this->isLoaded = true;
-    if (bodydata.size() == 47556) { // check if swich ver. save
+    if (bodydata.size() == 47556) { // Switch Saves have a length of 47556 BYTES, 3DS saves do not.
         this->isModern = true;
     } else {
         this->isModern = false;
