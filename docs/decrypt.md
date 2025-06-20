@@ -93,4 +93,4 @@ Error::ErrorCode SaveManager::loadFile(QString path)
 ```
 
 # Header Files (head.yw)
-These are decrypted in the same way as yw1 saves, specifically.....
+These are decrypted in the same way as yw1 saves, specifically they are decrypted identically to v1.0 saves but without the AES encryption at ALL, just `YWCipher`. Here is an example from Togenyan's YW1 Save Editor:
