@@ -2,6 +2,9 @@
 
 # Game Files (game*.yw)
 
+## v0.0 Save Files
+The YW2 Demo dosen't save progress. This is a joke, ignore this (I refuse to remove it).
+
 ## v1.0 Save Files
 In the international versions, this format affects save files last saved in v1.0. They can be read by v2.0 game copies. In the JP versions, it describes any version under 2.0, as the version history is different. Note that all copies of _Psychic Specters_ or _Shin'uchi_ are v2.0. A save file will have v2.0 marked on it in-game if it isn't.
 * These are first decrypted via a slighly non-standard AES-CCM (not GCM or plain CTR). The aeskey is fixed in v1.0 saves: "5+NI8WVq09V7LI5w". Then it uses a proprietary cipher, which I refer to as "YWCipher" inspired by Togenyan's naming schema. Then the CRC and key are stripped.
