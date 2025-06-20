@@ -94,3 +94,48 @@ Error::ErrorCode SaveManager::loadFile(QString path)
 
 # Header Files (head.yw)
 These are decrypted in the same way as yw1 saves, specifically they are decrypted identically to v1.0 saves but without the AES encryption at ALL, just `YWCipher`. Here is an example from Togenyan's YW1 Save Editor:
+```cpp
+Error::ErrorCode SaveManager::loadFile(QString path)
+{
+    QFile file(path);
+
+    QDir dir(QFileInfo(path).absolutePath());
+
+    if (!file.open(QIODevice::ReadOnly)) {
+        return Error::FILE_CANNOT_OPEN;
+    }
+
+    QByteArray bodydata = file.readAll();
+    file.close();
+
+    // decrypt second layer (YWCipher)
+    QByteArray ywkeyBytes = bodydata.right(4);
+    QByteArray *decryptedSecond = SaveManager::processYW(bodydata, false);
+    if (!decryptedSecond) {
+        return Error::DECRYPTION_YW_FAILED;
+    }
+
+    // strip CRC + key
+    decryptedSecond->resize(decryptedSecond->size() - 8);
+
+    // split into sections
+    Error::ErrorCode status = this->parseSavedata(*decryptedSecond);
+
+    delete decryptedSecond;
+    if (status != Error::SUCCESS) {
+        return status;
+    }
+
+    // loaded successfully
+    this->filepath = path;
+    this->ywcipherKey = ywkeyBytes;
+    this->isLoaded = true;
+    if (bodydata.size() == 47556) { // check if swich ver. save
+        this->isModern = true;
+    } else {
+        this->isModern = false;
+    }
+
+    return Error::SUCCESS;
+}
+```
