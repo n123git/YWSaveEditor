@@ -50,7 +50,7 @@ Each Key Item contains:
 | 0x02   | uint16  | num2             | #1's complete purpose is unknown, but it is known to be used for sorting/reference. |
 | 0x04   | uint32  | ItemID           | The item's ItemID, check my `data` folder for a list of all ItemIDs.|
 
---
+
 
 ## Equipment
 
