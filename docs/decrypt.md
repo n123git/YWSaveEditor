@@ -7,8 +7,88 @@ The YW2 Demo dosen't save progress. This is a joke, ignore this (I refuse to rem
 
 ## v1.0 Save Files
 In the international versions, this format affects save files last saved in v1.0. They can be read by v2.0 game copies. In the JP versions, it describes any version under 2.0, as the version history is different. Note that all copies of _Psychic Specters_ or _Shin'uchi_ are v2.0. A save file will have v2.0 marked on it in-game if it isn't.
-* These are first decrypted via a slighly non-standard AES-CCM (not GCM or plain CTR). The aeskey is fixed in v1.0 saves: "5+NI8WVq09V7LI5w". Then it uses a proprietary cipher, which I refer to as "YWCipher" inspired by Togenyan's naming schema. Then the CRC and key are stripped.
+* These are first decrypted via a slighly non-standard AES-CCM (not GCM or plain CTR). The aeskey is fixed in v1.0 saves: "5+NI8WVq09V7LI5w". Then it uses a proprietary cipher, which I refer to as "YWCipher" inspired by Togenyan's naming schema. Then the CRC and key are stripped. Here is a demonstration of the AES-CCM used:
 
+```cpp
+#pragma execution_character_set("utf-8")
+
+#include "ccmcipher.h"
+
+static const int TAG_SIZE = 16;
+
+CCMCipher::CCMCipher(const QByteArray &key, const QByteArray &nonce) :
+    key(key),
+    nonce(nonce)
+{
+
+}
+
+QByteArray *CCMCipher::encrypt(const QByteArray &in)
+{
+    /*
+     * in  : { plaintext (x byte) }
+     * out : { MAC (16 byte), ciphertext (x byte) }
+     */
+    std::string plaintext(in.data(), in.size());
+    std::string out;
+    try
+    {
+        CryptoPP::CCM< CryptoPP::AES, TAG_SIZE>::Encryption e;
+        e.SetKeyWithIV((unsigned char*)this->key.data(), this->key.size(),
+                       (unsigned char*)this->nonce.data(), this->nonce.size());
+        e.SpecifyDataLengths(0, plaintext.size(), 0);
+
+        /*
+         *  StringSource destroys AuthenticatedEncryptionFilter and StringSink
+         *  when it is destroyed. so no need to delete them.
+         */
+        CryptoPP::StringSource(plaintext, true,
+                               new CryptoPP::AuthenticatedEncryptionFilter(
+                                   e, new CryptoPP::StringSink(out)
+                                   )
+                               );
+    }
+    catch (CryptoPP::Exception &e)
+    {
+        return 0;
+    }
+    QByteArray *result = new QByteArray(out.c_str(), in.size());
+    result->prepend(out.c_str() + in.size(), TAG_SIZE);
+    return result;
+}
+
+QByteArray *CCMCipher::decrypt(const QByteArray &in)
+{
+    /*
+     * in  : { MAC (16 byte), ciphertext (x byte) }
+     * out : { plaintext (x byte) }
+     */
+
+    // { MAC, ciphertext } -> { ciphertext, MAC}
+    std::string ciphertext(in.data() + TAG_SIZE, in.size() - TAG_SIZE);
+    ciphertext.append(in.data(), TAG_SIZE);
+
+    std::string out;
+    try
+    {
+        CryptoPP::CCM< CryptoPP::AES, TAG_SIZE>::Decryption d;
+        d.SetKeyWithIV((unsigned char*)this->key.data(), this->key.size(),
+                       (unsigned char*)this->nonce.data(), this->nonce.size());
+        d.SpecifyDataLengths(0, ciphertext.size() - TAG_SIZE, 0);
+
+        CryptoPP::AuthenticatedDecryptionFilter df(
+                    d, new CryptoPP::StringSink(out)
+                    );
+        CryptoPP::StringSource(ciphertext, true, new CryptoPP::Redirector(df));
+    }
+    catch (CryptoPP::Exception &e)
+    {
+        return 0;
+    }
+    QByteArray *result = new QByteArray(out.c_str(), in.size() - TAG_SIZE);
+    return result;
+}
+```
 
 ## v2.0 Save Files
 This format affects save files last saved in v2.0 (or higher due to JP version history). Note that all copies of _Psychic Specters_ or _Shin'uchi_ (regardless of update) are v2.0. A save file will have v2.0 marked on it in-game if it is. The main difference is that the AESkey is no longer fixed, it is instead loaded from the `head.yw`. Specifically it gets the headdata, and places it into a fucntion that treats it as {ciphertext, CRC value of ciphertext, encryption key}. First, it extracts the last 8 bytes:
@@ -93,7 +173,7 @@ Error::ErrorCode SaveManager::loadFile(QString path)
 ```
 
 # Header Files (head.yw)
-These are decrypted in the same way as yw1 saves, specifically they are decrypted identically to v1.0 saves but without the AES encryption at ALL, just `YWCipher`. Here is an example from Togenyan and Nobody_F34R's YW1 Save Editor:
+These are decrypted in the same way as YW1 saves. Meaning that they are decrypted as if they were a v1.0 save, but without the AES encryption at ALL, just `YWCipher`. Here is an example from Togenyan and Nobody_F34R's YW1 Save Editor:
 
 ```cpp
 Error::ErrorCode SaveManager::loadFile(QString path)
@@ -142,7 +222,7 @@ Error::ErrorCode SaveManager::loadFile(QString path)
     return Error::SUCCESS;
 }
 ```
-And for `YWCipher`, the exact .... is:
+And for `YWCipher`, the exact specifics can be found here (again from Togenyan):
 ```cpp
 ﻿#pragma execution_character_set("utf-8")
 
