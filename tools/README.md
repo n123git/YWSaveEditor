@@ -11,5 +11,5 @@ You'll want some general tools such as:
 * Hex Editor - I personally use `HxD`, but others are fine too.
 And a tool to compare differences, usually between batches/groups to weed out factors such as time.
 
-I've personally made a `SectionID` parsing tool, which is an unused HTML placed in the `data` folder of releases. I have also made a batch difference checker via a label/ID system, but I lost the newer version which uses `SectionID` parsing. Both are out of date do NOT use them. For archival purposes the batch difference checker can be found in this dir as `legacy-diff-check.html`.
+I've personally made a `SectionID` parsing tool, which is an unused HTML placed in the `data` folder of releases. I have also made a batch difference checker via a label/ID system, but I lost the newer version which uses `SectionID` parsing. Both are out of date do NOT use them. For archival purposes the batch difference checker can be found in this dir as `legacy-diff-checker.html`.
 Currently, i'd recommend using my newest tool: the `YWSaveAnalyser`, which combines the functionalities of both into a simple, user-friendly interface (with some improvements across the board).
