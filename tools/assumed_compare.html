@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Offset Comparator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .file-entry { margin-bottom: 10px; }
+    label { margin-right: 5px; }
+    input[type="text"] { width: 100px; }
+    table { border-collapse: collapse; margin-top: 20px; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 5px; text-align: center; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <h1>File Offset Comparator</h1>
+  <div id="file-list"></div>
+  <button id="add-file-btn">Add File</button>
+  <button id="compare-btn">Compare Offsets</button>
+  <div id="results"></div>
+
+  <script>
+    const fileList = document.getElementById('file-list');
+    const addFileBtn = document.getElementById('add-file-btn');
+    const compareBtn = document.getElementById('compare-btn');
+    const resultsDiv = document.getElementById('results');
+
+    function addFileEntry() {
+      const entry = document.createElement('div');
+      entry.className = 'file-entry';
+      entry.innerHTML = `
+        <label>Label/ID: <input type="text" class="file-label" /></label>
+        <label>File: <input type="file" class="file-input" /></label>
+      `;
+      fileList.appendChild(entry);
+    }
+
+    addFileBtn.addEventListener('click', addFileEntry);
+    // add initial entry
+    addFileEntry();
+
+    compareBtn.addEventListener('click', () => {
+      resultsDiv.innerHTML = '';
+      const entries = Array.from(document.querySelectorAll('.file-entry'));
+      const grouped = {};
+      const readPromises = [];
+
+      entries.forEach((entry, idx) => {
+        const label = entry.querySelector('.file-label').value.trim();
+        const file = entry.querySelector('.file-input').files[0];
+        if (!label || !file) return;
+        if (!grouped[label]) grouped[label] = [];
+
+        const p = new Promise((res, rej) => {
+          const reader = new FileReader();
+          reader.onload = e => {
+            grouped[label].push(new Uint8Array(e.target.result));
+            res();
+          };
+          reader.onerror = rej;
+          reader.readAsArrayBuffer(file);
+        });
+        readPromises.push(p);
+      });
+
+      Promise.all(readPromises).then(() => {
+        // find minimum length among all files
+        let minLen = Infinity;
+        for (let label in grouped) {
+          grouped[label].forEach(arr => {
+            if (arr.length < minLen) minLen = arr.length;
+          });
+        }
+        if (minLen === Infinity) {
+          resultsDiv.textContent = 'No valid files/labels to compare.';
+          return;
+        }
+
+        const offsets = [];
+        // iterate offsets
+        for (let i = 0; i < minLen; i++) {
+          const labelValues = {};
+          let valid = true;
+          for (let label in grouped) {
+            const files = grouped[label];
+            // check same value across group
+            const firstVal = files[0][i];
+            if (!files.every(arr => arr[i] === firstVal)) {
+              valid = false;
+              break;
+            }
+            labelValues[label] = firstVal;
+          }
+          if (!valid) continue;
+          // check values differ between labels
+          const vals = Object.values(labelValues);
+          const uniqueVals = new Set(vals);
+          if (uniqueVals.size !== vals.length) continue;
+          offsets.push({ offset: i, values: labelValues });
+        }
+
+        if (offsets.length === 0) {
+          resultsDiv.textContent = 'No distinguishing offsets found.';
+          return;
+        }
+
+        // render table
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        headerRow.innerHTML = '<th>Offset</th>' +
+          Object.keys(grouped).map(label => `<th>${label}</th>`).join('');
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        offsets.forEach(o => {
+          const row = document.createElement('tr');
+          row.innerHTML = '<td>' + o.offset + '</td>' +
+            Object.keys(o.values).map(label => `<td>${o.values[label]}</td>`).join('');
+          tbody.appendChild(row);
+        });
+        table.appendChild(tbody);
+        resultsDiv.appendChild(table);
+      }).catch(err => {
+        console.error(err);
+        resultsDiv.textContent = 'Error reading files.';
+      });
+    });
+  </script>
+</body>
+</html>
