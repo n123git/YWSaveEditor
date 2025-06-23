@@ -158,7 +158,45 @@ specialUnlock:
 expPoint:
 - Edited via the default set and get methods: `yokai.set("expPoint", "a")`. Note: this represents the XP *TOWARDS* the next level, not the total XP :>
    - Can also be edited via `setRaw()`, and `getRaw()`.
+ 
+energy:
+- Edited via the helpers OR hex set and get methods: `yokai.setRaw("energy", "0A 00 01 0B")`. This holds the HP remaining and Soul guage.
+   - Can NOT be edited via `set()`, and `get()`.
+   - Edit via `yokai.setHelper.energy.HP.set()`, and `yokai.setHelper.energy.Soul.set(2)` along with their respective get methods. (Im too lazy to add them to this).
+ 
+ownerId:
+- Edited via the default set and get methods: `yokai.set("ownerId", "a")`.
+   - Can also be edited via `setRaw()`, and `getRaw()`.
+ 
+IV_HP, IV_Str, IV_Spr, IV_Def, IV_Spd, EV_HP, EV_Str, EV_Spr, EV_Def, EV_Spd, SC_Str, SC_Spr, SC_Def, and SC_Spd:
+- Edited via the default set and get methods: `yokai.set("SC_Str", "-3")` or `yokai.set("IV_HP", 2)`. Note: SC stats are signed, others are **not**.
+   - Can also be edited via `setRaw()`, and `getRaw()`.
+ 
+unknown:
+- Edited via the hex set and get methods: `yokai.setRaw("unknown", "a")`. Also this currently has no known use.
+   - Can NOT be edited via `set()`, but can be gotten as a string from `get()`.
+ 
+level:
+- Edited via the default set and get methods: `yokai.set("expPoint", "a")`. Note: this can theoretically go up to 255, but the game automatically sets it to 99 if it's higher.
+   - Can also be edited via `setRaw()`, and `getRaw()`.
+ 
+special6:
+- Edited via the helpers OR hex set and get methods: `yokai.setRaw("special6", "0A 00 01 0B...")`. This holds pose data.
+   - Can NOT be edited via `set()`, and `get()`.
+   - Edit via `yokai.setHelper.special6.unlockedPoses.set()`, and `yokai.setHelper.special6.currentPose.set()` along with their respective get methods.
 
+loafAndAi:
+- Edited via the helpers OR hex set and get methods: `yokai.setRaw("loafAndAi", "0A 00 01 0B...")`. This holds attitude data. Loaf is loafing attitude, AI is move attitude/frequency/moveAI
+   - Can NOT be edited via `set()`, and `get()`.
+   - Edit via `yokai.setHelper.loafAndAi.ai.set()`, and `yokai.setHelper.loafAndAi.loaf.set()` along with their corresponding get methods.
+
+specialEquip:
+- Edited via the helpers OR hex set and get methods: `yokai.setRaw("specialEquip", "0A 00 01 0B...")`. This holds Jibanyan's soultimate and Alliance (also known as Bony/Fleshy) data. Jibanyan's Alliance (and perhaps other story-befriends, and wicked yokai) *CANNOT* be changed due to how the game handles this in save files.
+   - Can NOT be edited via `set()`, and `get()`.
+   - Edit via `yokai.setHelper.specialEquip.alliance.set()`, and `yokai.setHelper.specialEquip.equipment.set()` (I totally didn't call it equipment because im brain-dead and too lazy to change it) along with their corresponding get methods. THIS IS CURRENTLY BROKEN USE HEX EDITING VIA SET AND GETRAW
+
+
+yokai.setHelper.specialEquip.alliance.get()
 ### Save Management
 ```javascript
 // Enable Japanese text support
