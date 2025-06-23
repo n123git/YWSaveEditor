@@ -39,7 +39,7 @@ Here is a basic example of an entry in that tree (values are in hex because ye):
 |        | → Full value: `0x011534F1`                              |                                        |
 |        | → ID = **`0xF1`** (last byte)                           |                                        |
 |        | → Size = **`0x011534`** (upper 3 bytes = 70964 bytes)   |                                        |
-| 0x08   | (data)                                                  | Payload of section ID 1                |
+| 0x08   | (data)                                                  | Payload of section ID 241              |
 | ...    | ...                                                     | Data. Can be nested.                   |
 | 0x1153C| `FF FE`                                                 | End Marker (0xFEFF)                    |
 
