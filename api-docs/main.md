@@ -112,11 +112,11 @@ youkaiId:
    - Can also be edited via `setRaw()`, and `getRaw()`.
  
 nickname:
-- Edited via the default set and get methods: `yokai.set("nickname", "a")`
-   - Can also be edited via `setRaw()`, and `getRaw()`.
+- Edited via the default set and get methods: `yokai.set("nickname", "hi!")`
+   - Can also be edited via `setRaw()`, and `getRaw()`. Renders as a black-box in game for invalid values and `""` or `00` represents no nickname used.
 
 unused1:
-- Edited via the hex set and get methods: `yokai.setRaw("unused1", "a")`. Also this currently has no known use.
+- Edited via the hex set and get methods: `yokai.setRaw("unused1", "00")`. Also this currently has no known use.
    - Can NOT be edited via `set()`, and `get()`.
  
 specialUnlock:
@@ -125,7 +125,7 @@ specialUnlock:
    - Edit via `yokai.setHelper.specialUnlock.attackLevel.set()`, `yokai.setHelper.specialUnlock.soultimateLevel.set()` and `yokai.setHelper.specialUnlock.techniqueLevel.set()` respectively (and their get methods).
 
 expPoint:
-- Edited via the default set and get methods: `yokai.set("expPoint", "a")`. Note: this represents the XP *TOWARDS* the next level, not the total XP :>
+- Edited via the default set and get methods: `yokai.set("expPoint", "32")`. Note: this represents the XP *TOWARDS* the next level, not the total XP :>
    - Can also be edited via `setRaw()`, and `getRaw()`.
  
 energy:
@@ -134,7 +134,7 @@ energy:
    - Edit via `yokai.setHelper.energy.HP.set()`, and `yokai.setHelper.energy.Soul.set(2)` along with their respective get methods. (Im too lazy to add them to this).
  
 ownerId:
-- Edited via the default set and get methods: `yokai.set("ownerId", "a")`.
+- Edited via the default set and get methods: `yokai.set("ownerId", "87f16038")`.
    - Can also be edited via `setRaw()`, and `getRaw()`.
  
 IV_HP, IV_Str, IV_Spr, IV_Def, IV_Spd, EV_HP, EV_Str, EV_Spr, EV_Def, EV_Spd, SC_Str, SC_Spr, SC_Def, and SC_Spd:
@@ -146,7 +146,7 @@ unknown:
    - Can NOT be edited via `set()`, but can be gotten as a string from `get()`.
  
 level:
-- Edited via the default set and get methods: `yokai.set("expPoint", "a")`. Note: this can theoretically go up to 255, but the game automatically sets it to 99 if it's higher.
+- Edited via the default set and get methods: `yokai.set("level", 21)`. Note: this can theoretically go up to 255, but the game automatically sets it to 99 if it's higher.
    - Can also be edited via `setRaw()`, and `getRaw()`.
  
 special6:
@@ -162,7 +162,7 @@ loafAndAi:
 specialEquip:
 - Edited via the helpers OR hex set and get methods: `yokai.setRaw("specialEquip", "0A 00 01 0B...")`. This holds Jibanyan's soultimate and Alliance (also known as Bony/Fleshy) data. Jibanyan's Alliance (and perhaps other story-befriends, and wicked yokai) *CANNOT* be changed due to how the game handles this in save files.
    - Can NOT be edited via `set()`, and `get()`.
-   - Edit via `yokai.setHelper.specialEquip.alliance.set()`, and `yokai.setHelper.specialEquip.equipment.set()` (I totally didn't call it equipment because im brain-dead and too lazy to change it) along with their corresponding get methods. THIS IS CURRENTLY BROKEN USE HEX EDITING VIA SET AND GETRAW
+   - Edit via `yokai.setHelper.specialEquip.alliance.set()`, and `yokai.setHelper.specialEquip.equipment.set()` (I totally didn't call it equipment because im brain-dead and too lazy to change it) along with their corresponding get methods. Note: for `alliance.set` any value that isnt "Bony" (case-insensitive) is considered fleshy/wicked/other. JIBANYAN SOULTIMATE IS CURRENTLY BROKEN USE HEX EDITING VIA SET AND GETRAW
 
 
 ### Save Management
@@ -192,3 +192,4 @@ DEV NOTES:
 FIX SOME ADVANCED FIELDS
 ADD REFRESH VIEW FOR USERS
 ADD WAYS TO EXPOSE LOADING SAVE FILES BEFORE INIT WITHOUT USING DOM SHENANIGANS
+ADD API SUPPORT FOR THE ITEMS EDITOR, GENERAL EDITOR ETC
