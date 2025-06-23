@@ -42,6 +42,7 @@ Note that the `Offset` in this table assumes the Player name is at `0x00` instea
 
 ## Notes (IGNORE)
 The `head.yw` is especially tolerant of illegal values, it allows things like illegal names (disallowed unicode characters appear as a black-box), an hour value of 25 etc
+SECTIONID parse?????????????????????????
 TO;DO document save file play time, save file location, save file party, save file gender, save file version
 
 legacy:
