@@ -44,42 +44,11 @@ Each Yokai object returned by `getAllYokai()` has the following methods:
 
 Notes:
 - Fields are **case-sensitive**.
-- You cannot edit hex fields via `.set` it will throw an error. Use `.setRaw` instead. The same applies to `get` and `getRaw` respectively.
+- You cannot edit hex fields via `.set` it will throw an error. Use `.setRaw` and `.getRaw` instead.
 
 #### Helper Methods
 
-The `.setHelper` object provides (hopefully) convenient methods for complex fields to reder `setRaw` and `getRaw` mostly obsolete:
-
-##### Energy Management
-```javascript
-yokai[0].setHelper.energy.HP.set(yokai[0].setHelper.energy.HP.get() - 50);      // Set HP
-yokai[0].setHelper.energy.Soul.set(250);    // Set Soul bar
-```
-
-##### Special Abilities
-```javascript
-yokai[0].setHelper.specialUnlock.attackLevel.set(5);     // Attack level
-yokai[0].setHelper.specialUnlock.techniqueLevel.set(3);  // Technique level  
-yokai[0].setHelper.specialUnlock.soultimateLevel.set(7); // Soultimate level
-```
-
-##### Poses & Animations
-```javascript
-yokai[0].setHelper.special6.currentPose.set(2);           // Current pose
-yokai[0].setHelper.special6.unlockedPoses.set([0,1,2,3]); // Unlocked poses array
-```
-
-##### Personality & AI
-```javascript
-yokai[0].setHelper.loafAndAi.loaf.set(3);  // Loaf attitude (0-7)
-yokai[0].setHelper.loafAndAi.ai.set(1);    // AI behavior pattern
-```
-
-##### Equipment & Alliance
-```javascript
-yokai[0].setHelper.specialEquip.equipment.set("equipName");  // Ignore equipment for now
-yokai[0].setHelper.specialEquip.alliance.set("Fleshy");      // Alliance: "Fleshy" or "Wicked" ALSO IGNORE THIS FOR NOW
-```
+The `.setHelper` object provides (hopefully) convenient methods for complex fields to reder `setRaw` and `getRaw` mostly obsolete. Read the property list for use instructions.
 
 ## Usage Examples
 
@@ -91,7 +60,7 @@ let allYokai = getAllYokai();
 // Level up first Yokai to max
 allYokai[0].set("level", 99);
 
-// Max out IVs for competitive play
+// set some garbage IVs for no reason whatsoever
 allYokai[0].set("IV_Spd", 15);
 allYokai[0].set("IV_Str", 15);
 allYokai[0].set("IV_Spr", 15);
@@ -100,7 +69,7 @@ allYokai[0].set("IV_Def", 15);
 
 ### Advanced Editing with Helpers
 ```javascript
-// Create a perfect Yokai
+// Create a perfect Yokai by overwriting the first one (ALWAYS Jibanyan in legit saves)
 let perfectYokai = allYokai[0];
 
 // Max stats
@@ -112,7 +81,7 @@ perfectYokai.setHelper.specialUnlock.attackLevel.set(10);
 perfectYokai.setHelper.specialUnlock.techniqueLevel.set(10);
 perfectYokai.setHelper.specialUnlock.soultimateLevel.set(10);
 
-// Set personality
+// Set attitudes
 perfectYokai.setHelper.loafAndAi.loaf.set(0);
 perfectYokai.setHelper.loafAndAi.ai.set(2);  
 ```
@@ -196,7 +165,6 @@ specialEquip:
    - Edit via `yokai.setHelper.specialEquip.alliance.set()`, and `yokai.setHelper.specialEquip.equipment.set()` (I totally didn't call it equipment because im brain-dead and too lazy to change it) along with their corresponding get methods. THIS IS CURRENTLY BROKEN USE HEX EDITING VIA SET AND GETRAW
 
 
-yokai.setHelper.specialEquip.alliance.get()
 ### Save Management
 ```javascript
 // Enable Japanese text support
@@ -212,16 +180,13 @@ console.log("Modified save hex:", modifiedSave);
 
 ## Notes
 
-- This API currently has bad input validation so don't put the wrong value :P
+- This API currently has input validation lazier than me so don't put the wrong value :P
 - Always call `getAllYokai()` first to load Yokai data
-- Use helper methods for complex multi-byte fields
-- Raw hex editing requires understanding of the save file format, so USE THE HELPERS!!!!
+- USE THE HELPER METHODS FOR COMPLEX FIELDS, IF YOU USE THE HEX EDITOR WHY??????
+- Raw hex editing requires understanding of the save file format, so AGAIN, USE THE HELPERS!!!!
 - CP932 encoding is needed for proper Japanese character support, there is no way around this for now.
 - Changes are applied immediately to the in-memory save data so yeah :<
 - Use `exportSave()` to get the final modified save file
-
-
-
 
 DEV NOTES:
 FIX SOME ADVANCED FIELDS
