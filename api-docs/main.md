@@ -2,6 +2,9 @@
 
 A comprehensive JavaScript API for interacting with the Yo-kai editor for Yo-kai Watch 2 save files.
 
+* How do you use the API?
+* Follow this doc (XD), and paste the code into the JS console once your save file is loaded :>
+
 ## Quick Start
 
 ```javascript
@@ -142,3 +145,11 @@ console.log("Modified save hex:", modifiedSave);
 - CP932 encoding is needed for proper Japanese character support, there is no way around this for now.
 - Changes are applied immediately to the in-memory save data so yeah :<
 - Use `exportSave()` to get the final modified save file
+
+
+
+
+DEV NOTES:
+FIX SOME ADVANCED FIELDS
+ADD REFRESH VIEW FOR USERS
+ADD WAYS TO EXPOSE LOADING SAVE FILES BEFORE INIT WITHOUT USING DOM SHENANIGANS
