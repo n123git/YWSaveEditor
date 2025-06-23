@@ -139,7 +139,24 @@ num2:
    - Can also be edited via `setRaw()`, and `getRaw()`.
 
 youkaiId:
-- Note: Also known as the yokai itself, also beware of capitalization. Can be edited via the default set method: `yokai.set("youkaiId", ID)`.
+- Note: Also known as the yokai itself, type rares are considered seperate yokai. Also, beware of capitalization. Can be edited via the default set method: `yokai.set("youkaiId", ID)`.
+   - Can also be edited via `setRaw()`, and `getRaw()`.
+ 
+nickname:
+- Edited via the default set and get methods: `yokai.set("nickname", "a")`
+   - Can also be edited via `setRaw()`, and `getRaw()`.
+
+unused1:
+- Edited via the hex set and get methods: `yokai.setRaw("unused1", "a")`. Also this currently has no known use.
+   - Can NOT be edited via `set()`, and `get()`.
+ 
+specialUnlock:
+- Edited via the helpers OR hex set and get methods: `yokai.setRaw("specialUnlock", "0A 00...")`. This holds attack, technique and soultimate levels.
+   - Can NOT be edited via `set()`, and `get()`.
+   - Edit via `yokai.setHelper.specialUnlock.attackLevel.set()`, `yokai.setHelper.specialUnlock.soultimateLevel.set()` and `yokai.setHelper.specialUnlock.techniqueLevel.set()` respectively (and their get methods).
+
+expPoint:
+- Edited via the default set and get methods: `yokai.set("expPoint", "a")`. Note: this represents the XP *TOWARDS* the next level, not the total XP :>
    - Can also be edited via `setRaw()`, and `getRaw()`.
 
 ### Save Management
