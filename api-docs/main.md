@@ -42,9 +42,13 @@ Each Yokai object returned by `getAllYokai()` has the following methods:
 - **`.getRaw(field)`** - Get raw hex bytes for a field. The complex field helper can help you with this so you don't need this for complex fields either lol.
 - **`.setRaw(field, hexString)`** - Set raw hex bytes in the form of a string for a field i.e. `"60 00 A9 81"`. The complex field helper can help you with this so you don't need this for complex fields either lol.
 
+Notes:
+- Fields are **case-sensitive**.
+- You cannot edit hex fields via `.set` it will throw an error. Use `.setRaw` instead. The same applies to `get` and `getRaw` respectively.
+
 #### Helper Methods
 
-The `.setHelper` object provides (hopefully) convenient methods for complex fields:
+The `.setHelper` object provides (hopefully) convenient methods for complex fields to reder `setRaw` and `getRaw` mostly obsolete:
 
 ##### Energy Management
 ```javascript
@@ -115,13 +119,28 @@ perfectYokai.setHelper.loafAndAi.ai.set(2);
 
 ### Raw Hex Editing
 ```javascript
-// For advanced users who want direct hex manipulation
+// For devs who want direct hex manipulation
 let energyHex = allYokai[0].getRaw("energy");
 console.log("Current energy hex:", energyHex);
 
 // Set raw energy data
 allYokai[0].setRaw("energy", "FF FF FF FF 00 00 00 00");
 ```
+
+### Property List & Editing Guide
+This is a list on everything that *can* and *can't* be edited and how to do so.
+
+num1:
+- Edited via the default set and get methods: `yokai.set("num1", "5")`
+   - Can also be edited via `setRaw()`, and `getRaw()`.
+
+num2:
+- Edited via the default set and get methods: `yokai.set("num2", "7")`
+   - Can also be edited via `setRaw()`, and `getRaw()`.
+
+youkaiId:
+- Note: Also known as the yokai itself, also beware of capitalization. Can be edited via the default set method: `yokai.set("youkaiId", ID)`.
+   - Can also be edited via `setRaw()`, and `getRaw()`.
 
 ### Save Management
 ```javascript
