@@ -16,7 +16,7 @@ Each Yo-kai entry is has a length of `0x5C` (92) bytes.
 | 0x00   | uint16  | num1             | #0's complete purpose is unknown, but it is known to be used for sorting/reference. |
 | 0x02   | uint16  | num2             | #1's complete purpose is unknown, but it is known to be used for sorting/reference. |
 | 0x04   | uint32  | YokaiID          | The Yo-kai's ID, note that Type Rares have different IDs, and so do boss vs befriendable Yo-kai. Check my `data` folder for a list of all Yo-kai ID's. 0 = Empty slot.|
-| 0x08   | uint24  | Nickname         | The Yo-kai's Nickname in UTF-8. `0x0` = No Nickname. Unused characters render as a filled black box.|
+| 0x08   | uint24  | Nickname         | The Yo-kai's Nickname in UTF-8/cp932*. `0x0` = No Nickname. Unused characters render as a filled black box.|
 | 0x20   | uint20  | Misc             | The 11th byte refers to the atack level, the 15th refer's to the technique level, and the 18th refers to the soultimate level i.e. `0A`= level 10.|
 | 0x34   | uint32  | XP               | The Current XP *towards* the next level, NOT the total XP. |
 | 0x38   | int16   | HP Remaining     | The Current amount of HP Remaining. |
@@ -27,11 +27,11 @@ Each Yo-kai entry is has a length of `0x5C` (92) bytes.
 | 0x42   | uint8   | IV_Spr           | IV for SPR (Spirit). | 
 | 0x43   | uint8   | IV_Def           | IV for DEF (Defense).| 
 | 0x44   | uint8   | IV_Spd           | IV for SPD (Speed).|
-| 0x45   | uint8   | EV_HP            | EV for HP. | 
-| 0x46   | uint8   | EV_Str           | EV for STR (Strength).| 
-| 0x47   | uint8   | EV_Spr           | EV for SPR (Spirit). | 
-| 0x48   | uint8   | EV_Def           | EV for DEF (Defense).| 
-| 0x49   | uint8   | EV_Spd           | EV for SPD (Speed).|
+| 0x45   | int8    | EV_HP            | EV for HP. | 
+| 0x46   | int8    | EV_Str           | EV for STR (Strength).| 
+| 0x47   | int8    | EV_Spr           | EV for SPR (Spirit). | 
+| 0x48   | int8    | EV_Def           | EV for DEF (Defense).| 
+| 0x49   | int8    | EV_Spd           | EV for SPD (Speed).|
 | 0x4A   | uint8   | unknown          | Unknown. |
 | 0x4B   | int8    | SC_Str           | SC buff/nerf for STR (Strength). |
 | 0x4C   | int8    | SC_Spr           | SC buff/nerf for SPR (Spirit). |
