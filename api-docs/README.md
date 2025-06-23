@@ -1,6 +1,6 @@
 # General
 
-This documentation describes the Save API, which allows programmatic modification of save files using my save editor.
+This documentation describes the Save API, which allows JS modification of save files using a simple yet powerful API via my save editor.
 
 * [/yokai.md](https://github.com/n123git/YWSaveEditor/blob/main/api-docs/yokai.md) describes the API calls for the yokai editor (available through devtools console once the save is loaded)
 
