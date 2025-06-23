@@ -207,7 +207,7 @@ Data is usually stored as either a `uint8`, `uint32` or ocasionally a `uint16` a
 11111111111111111111 → All trophies<br/>
 10000000000000000001 → First and last trophy only
 
-Also note that all IDs are saved as their CRC-32 Checksum. An example of this is location; your Location is stored as the CRC-32 Checksum of it's file name. A list of all the file names can be found [here](https://tcrf.net/Notes:Yo-kai_Watch_2). And other examples include Items and Yo-kai.
+Also note that all IDs are saved as their CRC-32 Checksum. An example of this is location; your Location is stored as the CRC-32 Checksum of it's file name. A list of all the file names can be found [here](https://tcrf.net/Notes:Yo-kai_Watch_2). And other examples include Items and Yo-kai. Also note that (THIS IS VERY IMPORTANT). JP copies use cp932, whereas international save files use UTF-8
 
 ### Examples
 The data found in the `game*.yw` and `head.yw` files are, in detail documented in their individual pages:
