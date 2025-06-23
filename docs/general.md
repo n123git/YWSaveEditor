@@ -210,7 +210,7 @@ Data is usually stored as either a `uint8`, `uint32` or ocasionally a `uint16` a
 Also note that all IDs are saved as their CRC-32 Checksum. An example of this is location; your Location is stored as the CRC-32 Checksum of it's file name. A list of all the file names can be found [here](https://tcrf.net/Notes:Yo-kai_Watch_2). And other examples include Items and Yo-kai.
 
 ## Reigonal Differences:
-* JP copies use cp932 (or code page 932) - which is an extension of SHIFT_JIS, whereas international save files use UTF-8. They both have ASCII compatibility (not extended ASCII). So the problem is usually worse for JP -> International, than the other way around.
+* JP copies use cp932 (or code page 932) for text - which is an extension of SHIFT_JIS, whereas international save files use UTF-8. They both have ASCII compatibility (not extended ASCII). So the problem is usually worse for JP -> International, than the other way around.
 
 ### Examples
 The data found in the `game*.yw` and `head.yw` files are, in detail documented in their individual pages:
