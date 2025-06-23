@@ -8,7 +8,7 @@ LOREM IPSUM ACTUALLY WRITE THIS LATER
 
 ## Examples
 
-Yo-kai Example #1: Auto numbers and fixes IVs of all Yo-kai:
+Yo-kai Example #1: Fixes IVs of all Yo-kai:
 ```js
 (function fixYokaiData() {
     const yokaiList = getAllYokai();
@@ -17,11 +17,6 @@ Yo-kai Example #1: Auto numbers and fixes IVs of all Yo-kai:
     let ivTotalTarget = 40;
 
     yokaiList.forEach((yokai, index) => {
-        // --- Fix num1 and num2 ---
-        let value = (index +1)* 2;
-        yokai.set("num1", index);
-        yokai.set("num2", value);
-
         // --- Fix IVs ---
         let IV_HP = yokai.get("IV_HP");
         let IV_Str = yokai.get("IV_Str");
