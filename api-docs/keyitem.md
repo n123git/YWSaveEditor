@@ -6,14 +6,13 @@ A (hopefully) complete JS API for interacting with my save editor's Key Items br
 * Follow this doc (XD), and paste the code into the JS console once your save file is loaded :>
 * Unlike the Yo-kai editor, this is *not* fully class based.
 
-## Table of Contents
-- [Installation](#installation)
+## (Incomplete) Table of Contents
 - [Quick Start](#quick-start)
 - [API Reference](#api-reference)
 - [Data Structures](#data-structures)
-- [Usage Examples](#usage-examples)
+- [Examples](#examples)
 - [Error Handling](#error-handling)
-- [Best Practices](#best-practices)
+- [Remember These](#remember-these)
 
 ## Quick Start
 
