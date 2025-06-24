@@ -1,6 +1,6 @@
 # Yo-kai Save Editor API Documentation
 
-A comprehensive JavaScript API for interacting with the Yo-kai editor for Yo-kai Watch 2 save files.
+A (hopefully) complete JS API for interacting with my save editor's Yo-kai branch
 
 * How do you use the API?
 * Follow this doc (XD), and paste the code into the JS console once your save file is loaded :>
