@@ -48,3 +48,50 @@ Yo-kai Example #1: Fixes IVs of all Yo-kai:
     console.log("All done!");
 })();
 ```
+
+Key items Example #1 Shuffles Item Order
+```js
+// Simple Item Randomizer Example
+// Swaps item IDs between all non-empty slots to randomize inventory order
+
+function randomizeItems() {
+    // Check if save is loaded
+    if (!SaveAPI.isLoaded) {
+        console.log("Please load a save first!");
+        return;
+    }
+    
+    // Get all non-empty items
+    const items = SaveAPI.getAllItems().filter(item => item.itemId !== 0);
+    
+    if (items.length < 2) {
+        console.log("Need at least 2 items to randomize!");
+        return;
+    }
+    
+    // Extract item IDs and shuffle them
+    const itemIds = items.map(item => item.itemId);
+    
+    // Simple shuffle (Fisher-Yates)
+    for (let i = itemIds.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [itemIds[i], itemIds[j]] = [itemIds[j], itemIds[i]];
+    }
+    
+    // Apply shuffled IDs back to original slots (keeping quantities)
+    for (let i = 0; i < items.length; i++) {
+        SaveAPI.setItem(items[i].index, {
+            num1: items[i].num1,    // Keep original quantity
+            num2: items[i].num2,    // Keep original flags
+            itemId: itemIds[i]      // Use shuffled ID
+        });
+    }
+    
+    // Update the UI
+    SaveAPI.updateUI();
+    
+    console.log(`Randomized ${items.length} items!`);
+}
+
+console.log("Item randomizer loaded! Use: randomizeItems()");
+```
