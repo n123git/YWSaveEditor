@@ -6,7 +6,7 @@
 
 # Yo-kai Watch 2 Save Editor
 
-A terrible, WIP **Save Editor for Yo-kai Watch 2**, which supports **desktop, mobile and the 3DS!<sup><a href="#footnote-1" style="text-decoration: none; color: inherit;">1</a></sup>** Built to be reliable yet feature-rich. Whether you're a competitive player, modder, or just a casual fan — this tool was made for you!
+A terrible, WIP **Save Editor for Yo-kai Watch 2**, which is made to support **desktop, mobile and the 3DS!<sup><a href="#footnote-1" style="text-decoration: none; color: inherit;">1</a></sup>** Built to be reliable yet feature-rich. Whether you're a competitive player, modder, or just a casual fan — this tool was made for you!
 
 ### Disclaimer
 This tool is *severly* unfinished, I do not recommend it, find better ones [here](https://github.com/nobodyF34R/ykw-editors).</br>
@@ -32,7 +32,8 @@ This tool is provided "as is" without any warranties, express or implied. The cr
    - Modify Yo-kai, inventory, key items, currencies (money, JP, BP/KP, GP), team, medals, and much, much more.
    - Built-in hex editor via `Dev Mode`. (If you don't know what this is, you don't need it)
    - Illegal value detection and suggestion.
-   - Config file and libs to make macros with (no i'm not going to make a version for python)
+   - Config file
+   - An API to programatically interact with it :>
 -  **Modding Support**: Built with modularity in mind — ideal for custom Yo-kai, future expansion etc.
    - Easily customize parsing logic, field definitions, or UI components.
 -  **Fast & Efficient**: Optimized for laziness, and no speed — even on 3DS hardware.
