@@ -31,6 +31,7 @@ console.log('  console.log(isCP932());                       // Check encoding m
 - **`exportSave()`** - Exports the current save data as a hex string cuz why not :>
 - **`setCP932(enabled)`** - Enable/disable CP932 text encoding for Japanese characters. Enable this for full support in JP save files (optional).
 - **`isCP932()`** - Check if CP932 encoding is currently enabled. Again, enable this for full support in JP save files (optional).
+- **`currentSlot()`** - Returns the current Yokai slot selected in the editor UI, null if none is selected. (requires API v1.1)
 
 ### Yokai Object Methods
 
