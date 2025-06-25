@@ -78,11 +78,11 @@ function randomizeItems() {
         [itemIds[i], itemIds[j]] = [itemIds[j], itemIds[i]];
     }
     
-    // Apply shuffled IDs back to original slots (keeping quantities)
+    // Apply shuffled IDs back to original slots (keeping nums)
     for (let i = 0; i < items.length; i++) {
         SaveAPI.setItem(items[i].index, {
-            num1: items[i].num1,    // Keep original quantity
-            num2: items[i].num2,    // Keep original flags
+            num1: items[i].num1,    // Keep original num1
+            num2: items[i].num2,    // Keep original num2
             itemId: itemIds[i]      // Use shuffled ID
         });
     }
