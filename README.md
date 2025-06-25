@@ -17,6 +17,7 @@ This tool is provided "as is" without any warranties, express or implied. The cr
 
 ## Table of Contents:
  - See the [/docs/](https://github.com/n123git/YWSaveEditor/tree/main/docs) folder for technical documentation (Don't worry, I saved you the effort of trying to go through my terrible code :D).
+ - See the [/api-docs/](https://github.com/n123git/YWSaveEditor/tree/main/api-docs) folder for documentation on my API.
  - Visit [/releases/latest](https://github.com/n123git/YWSaveEditor/releases/latest) for downloads and source code.
  - Use [Issues](https://github.com/n123git/YWSaveEditor/issues) or [Pull Requests](https://github.com/n123git/YWSaveEditor/pulls) to report bugs and suggest features (or just ping @n123original on discord).
 
