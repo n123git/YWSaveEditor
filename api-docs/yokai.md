@@ -102,11 +102,13 @@ This is a list on everything that *can* and *can't* be edited and how to do so.
 num1:
 - Edited via the default set and get methods: `yokai.set("num1", "5")`
    - Can also be edited via `setRaw()`, and `getRaw()`.
+   - The complete purpose is unknown.
 
 num2:
 - Edited via the default set and get methods: `yokai.set("num2", "7")`
    - Can also be edited via `setRaw()`, and `getRaw()`.
-
+   - The complete purpose is unknown.
+  
 youkaiId:
 - Note: Also known as the yokai itself, type rares are considered seperate yokai. Also, beware of capitalization. Can be edited via the default set method: `yokai.set("youkaiId", ID)`.
    - Can also be edited via `setRaw()`, and `getRaw()`.
@@ -114,6 +116,7 @@ youkaiId:
 nickname:
 - Edited via the default set and get methods: `yokai.set("nickname", "hi!")`
    - Can also be edited via `setRaw()`, and `getRaw()`. Renders as a black-box in game for invalid values and `""` or `00` represents no nickname used.
+   - Uses cp932 (an extension of SHIFT_JIS) in JP versions, and UTF-8 in international versions, although this is automatically handled.
 
 unused1:
 - Edited via the hex set and get methods: `yokai.setRaw("unused1", "00")`. Also this currently has no known use.
@@ -123,6 +126,7 @@ specialUnlock:
 - Edited via the helpers OR hex set and get methods: `yokai.setRaw("specialUnlock", "0A 00...")`. This holds attack, technique and soultimate levels.
    - Can NOT be edited via `set()`, and `get()`.
    - Edit via `yokai.setHelper.specialUnlock.attackLevel.set()`, `yokai.setHelper.specialUnlock.soultimateLevel.set()` and `yokai.setHelper.specialUnlock.techniqueLevel.set()` respectively (and their get methods).
+   - The highest valid value is 10 (`0x0A`)
 
 expPoint:
 - Edited via the default set and get methods: `yokai.set("expPoint", "32")`. Note: this represents the XP *TOWARDS* the next level, not the total XP :>
@@ -140,7 +144,8 @@ ownerId:
 IV_HP, IV_Str, IV_Spr, IV_Def, IV_Spd, EV_HP, EV_Str, EV_Spr, EV_Def, EV_Spd, SC_Str, SC_Spr, SC_Def, and SC_Spd:
 - Edited via the default set and get methods: `yokai.set("SC_Str", "-3")` or `yokai.set("IV_HP", 2)`. Note: SC stats are signed, others are **not**.
    - Can also be edited via `setRaw()`, and `getRaw()`.
- 
+   - IVs can technically reach 127, but HP_IV's legal max is 80, and the other IVs cap out at 40. EVs cap out at 127. Legal SCs can't be smaller than -10 or larger than 25.
+
 unknown:
 - Edited via the hex set and get methods: `yokai.setRaw("unknown", "a")`. Also this currently has no known use.
    - Can NOT be edited via `set()`, but can be gotten as a string from `get()`.
@@ -148,6 +153,7 @@ unknown:
 level:
 - Edited via the default set and get methods: `yokai.set("level", 21)`. Note: this can theoretically go up to 255, but the game automatically sets it to 99 if it's higher.
    - Can also be edited via `setRaw()`, and `getRaw()`.
+   - Values > 99 automatically get set to 99 when the game is loaded.
  
 special6:
 - Edited via the helpers OR hex set and get methods: `yokai.setRaw("special6", "0A 00 01 0B...")`. This holds pose data.
