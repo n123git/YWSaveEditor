@@ -130,7 +130,7 @@ Adds a new item or updates an existing one. Automatically finds the best slot. (
 
 **Example:**
 ```javascript
-// Add new item with default quantity
+// Add new item
 let index = SaveAPI.addOrUpdateItem(1332445335);
 
 // Add with specific data
@@ -207,8 +207,8 @@ Global shortcut functions are available for common operations:
 ```javascript
 {
     index: 0,           // Slot index (0-based)
-    num1: 1,           // First number (often quantity)
-    num2: 0,           // Second number (often flags/type)
+    num1: 1,           // First number
+    num2: 0,           // Second number
     itemId: 12345,     // Item ID
     name: "Yo-kai Watch", // Human-readable name
     offset: 14056      // Byte offset in save file
