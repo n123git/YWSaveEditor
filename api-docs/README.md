@@ -49,6 +49,70 @@ Yo-kai Example #1: Fixes IVs of all Yo-kai:
 })();
 ```
 
+Yo-kai Example #2: The inner workings of the copy-paste button (requires API v1.1)
+```js
+
+
+function copy() {
+    const slotIndex = currentSlot();
+    if (slotIndex === null) {
+        alert("No Yo-kai slot selected to copy");
+        return;
+    }
+    window.copiedYokaiSlot = slotIndex;
+    console.log(`Copied Yo-kai from slot ${slotIndex}`);
+}
+
+function paste() {
+    if (window.copiedYokaiSlot === undefined) {
+        alert("No Yo-kai copied");
+        return;
+    }
+    
+    const targetSlot = currentSlot();
+    if (targetSlot === null) {
+        alert("No target slot selected");
+        return;
+    }
+    
+    copyYokaiSlot(window.copiedYokaiSlot, targetSlot);
+    syncSave();
+}
+
+function copyYokaiSlot(sourceIndex, targetIndex) {
+    let yokaiList = getAllYokai();
+    if (sourceIndex < 0 || sourceIndex >= yokaiList.length) {
+        console.error("Invalid source slot:", sourceIndex);
+        return;
+    }
+    if (targetIndex < 0 || targetIndex >= yokaiList.length) {
+        console.error("Invalid target slot:", targetIndex);
+        return;
+    }
+    
+    // Get raw hex for the source Yo-kai
+    let fieldsToCopy = [
+        "num1", "num2", "youkaiId", "nickname", "unused1", "specialUnlock",
+        "expPoint", "energy", "ownerId", 
+        "IV_HP", "IV_Str", "IV_Spr", "IV_Def", "IV_Spd",
+        "EV_HP", "EV_Str", "EV_Spr", "EV_Def", "EV_Spd",
+        "SC_Str", "SC_Spr", "SC_Def", "SC_Spd",
+        "unknown", "level", "special6", "loafAndAi", "specialEquip"
+    ];
+
+    fieldsToCopy.forEach(field => {
+        try {
+            let raw = yokaiList[sourceIndex].getRaw(field);
+            yokaiList[targetIndex].setRaw(field, raw);
+        } catch (e) {
+            console.warn(`Skipping field '${field}' (reason: ${e.message})`);
+        }
+    });
+
+    console.log(`Copied Yo-kai from slot ${sourceIndex} to slot ${targetIndex}`);
+}
+```
+
 Key items Example #1 Shuffles Item Order
 ```js
 // Simple Item Randomizer Example
