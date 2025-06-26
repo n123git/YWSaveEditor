@@ -164,6 +164,10 @@ d = doStuff(d); // im lazy ok
 api.syncSave(d)
 ```
 
+**Notes:**
+* The input is hex, whitespace is ignored, and it is case-insensitive. It automatically strips whitespace, adds a space every byte, and capitises letters
+   * TL;DR requirements are lax, it internally rearranges it to my preferences :>>>>
+
 ## Data Types
 
 ### Numbers
