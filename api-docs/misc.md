@@ -100,11 +100,32 @@ Lists all available fields in the save file.
 ```javascript
 api.listFields();
 // Returns: [
-//   { name: 'money', format: 'uint32', size: 4, description: 'Player money' },
-//   { name: 'Location', format: 'location', size: 2, description: 'Current location' },
-//   ...
-// ]
+ {
+    "name": "Location",
+    "format": "location",
+    "size": 4,
+    "description": "Current location in the game"
+  },
+  {
+    "name": "XPos",
+    "format": "float32",
+    "size": 4,
+    "description": "Current X Coordinate in the game"
+  },
+  {
+    "name": "YPos",
+    "format": "float32",
+    "size": 4,
+    "description": "Current Y Coordinate in the game"
+  },
+  {
+    "name": "ZPos",
+    "format": "float32",
+    "size": 4,
+    "description": "Current Z Coordinate in the game"
+  },  ... ]
 ```
+
 
 #### `getAvailableValues(fieldName)`
 Gets available values for enum-type fields.
@@ -245,12 +266,12 @@ api.set('weatherevent', [true, false, true, false]);
 | `uint24` | 24-bit integer | `1000000` | `1000000` |
 | `uint32` | 32-bit integer | `4000000` | `4000000` |
 | `float32` | 32-bit float | `123.45` | `123.45` |
-| `location` | Location name | `"Forest Path"` | `"Forest Path"` |
-| `ficon` | Friend icon name | `"Smiley Face"` | `"Smiley Face"` |
+| `location` | Location name | `"Uptown Springdale"` | `"Uptown Springdale"` |
+| `ficon` | Friend icon name | `"Pandle"` | `"Pandle"` |
 | `weatherevent` | Weather flags | `[1,0,1,0,0,0,0,0]` | `[1,0,1,0,0,0,0,0]` |
 | `chest` | Chest collection | `[0,1,1,0,...]` | `[0,1,1,0,...]` |
 | `trophy` | Trophy collection | `[1,1,0,1,...]` | `[1,1,0,1,...]` |
-| `hex` | Raw hex data | `"deadbeef"` | `"deadbeef"` |
+| `hex` | Raw hex data | `"deadbeef"` | `"deadbeef"` | <!-- for those who know :> -->
 
 ## Integration
 
