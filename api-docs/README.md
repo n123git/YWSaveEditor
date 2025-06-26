@@ -4,7 +4,7 @@ This documentation describes the Save API, which allows JS modification of save 
 
 * [/yokai.md](https://github.com/n123git/YWSaveEditor/blob/main/api-docs/yokai.md) describes the API calls for the yokai editor (available through devtools console once the save is loaded)
 * [/keyitem.md](https://github.com/n123git/YWSaveEditor/blob/main/api-docs/keyitem.md) describes the API calls for the key items editor  (again, available through devtools console once the save is loaded)
-* coming soon describes the API calls for the general editor, again load the save file and then paste it in the devtools console available via Ctrl+Shift+I on most browsers.
+* [/misc.md](https://github.com/n123git/YWSaveEditor/blob/main/api-docs/misc.md) describes the API calls for the general editor  (again, AGAIN, available through devtools console once the save is loaded)
 LOREM IPSUM ACTUALLY WRITE THIS LATER
 
 ## Examples
