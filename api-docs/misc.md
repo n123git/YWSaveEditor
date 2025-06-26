@@ -1,6 +1,6 @@
 # MiscApi Documentation
 
-A JS API for managing my save editor programmatically (wow fancy words I totally didnt look up like a year ago :>).
+A JS API for managing my save editor programmatically for the misc/general portion (wow fancy words I totally didnt look up like a year ago :>).
 
 ## Quick Start
 
