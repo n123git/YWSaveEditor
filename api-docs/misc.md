@@ -135,7 +135,7 @@ api.getSaveHex();  // Returns: "4A6F686E00000000FF7F..."
 #### `getVersion() `
 Returns the current API version as a number (NOT the save editer version. I considered making this a BigInt or even a Symbol to troll)
 
-**Returns:** Numer corresponding to API Version
+**Returns:** Number corresponding to API Version
 
 **Example:**
 ```javascript
@@ -151,6 +151,17 @@ if(api.getVersion() !== 1.0) {
 code()
 ```
 
+#### `syncSave(hex = getSaveHex())`
+Changes the save file to match the input - by default the normal save fetched from the API (wow the API uses the API)
+
+**Returns:** `undefined`
+
+**Example:**
+```javascript
+d = api.getSaveHex()
+d = doStuff(d); // im lazy ok
+api.syncSave(d)
+```
 
 ## Data Types
 
@@ -241,5 +252,3 @@ api.set('weatherevent', [true, false, true, false]);
 The API automatically updates the UI when values change:
 - Calls `updateOutput()` to refresh the save file
 - Calls `renderFields()` to update the display (unless in dev mode)
-
-NOTE: ADD api.syncSave()
