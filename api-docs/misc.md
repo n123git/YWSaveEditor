@@ -22,6 +22,7 @@ Retrieves a formatted value from the save file.
 **Returns:**
 - For bit arrays (chest, weatherevent, trophy): Array of 0s and 1s
 - For other fields: Formatted value (string, number, etc.)
+- If the save file has been loaded but the processing failed i.e. the save data is just `0A`, this returns `Uncaught TypeError: node is null`
 
 **Examples:**
 ```javascript
