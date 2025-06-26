@@ -129,7 +129,7 @@ You are free to use, modify, and distribute it as long as you credit the origina
 ## Credits
 
 - [The LovePotion Team](https://lovebrew.org/) - for developing and maintaining the best 3DS game engine.
-- [Nobody_F34R](https://github.com/nobodyF34R) - for his YW-ID project, general help and being a chill guy all around.
+- [NobodyF34R](https://github.com/nobodyF34R) - for his YW-ID project, general help and being a chill guy all around.
 - [Togenyan](https://github.com/Togenyan) — inspiration and original editor framework.
 - [Level-5](https://en.wikipedia.org/wiki/Level-5_(company)) — developers of Yo-kai Watch.
 - The community — for being chill af.
