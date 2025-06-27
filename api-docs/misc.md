@@ -1,6 +1,8 @@
 # MiscApi Documentation
+A (hopefully) complete JS API for interacting with my save editor's general branch programatically (wow fancy words I totally didnt look up :>).
 
-A JS API for managing my save editor programmatically for the misc/general portion (wow fancy words I totally didnt look up like a year ago :>).
+* How do you use the API?
+* Follow this doc (XD), and paste the code into the JS console once your save file is loaded :>
 
 ## Quick Start
 
