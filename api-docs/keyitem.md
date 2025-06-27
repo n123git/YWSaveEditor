@@ -35,6 +35,35 @@ Note: this doc uses `SaveAPI`, `SaveAPI` is an instance of `SaveEditorAPI` that 
 
 ### Core Methods (Yay)
 
+#### `SaveAPI.syncSave(hexData)`
+Alias for `SaveAPI.loadSave(hexData)`. Requries API v1.1
+- Notes: Ignores whitespace, case insensitive.
+
+**Example:**
+```javascript
+let success = SaveAPI.syncSave("FEFF01AB0A7C48656C6C6F20576F726C64...");
+if (success) {
+    console.log("Save loaded successfully!");
+}
+```
+
+#### `SaveAPI.getVersion()`
+Returns the current API version. Requires API v1.1
+
+**Parameters:**
+- N/A
+
+**Returns:**
+- `number`: API Version.
+
+**Example:**
+```javascript
+let version = SaveAPI.getVersion();
+if (version < minimum) {
+    throw Error("Requires API v" + minimum +" or later!")
+}
+```
+
 #### `SaveAPI.loadSave(hexData)`
 Loads save data from a hex string. Kinda self-explanatory.
 
