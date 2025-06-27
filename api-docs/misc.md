@@ -70,7 +70,7 @@ Gets the raw hex bytes for a field.
 
 **Example:**
 ```javascript
-api.getRaw('money');  // Returns: "7f96"
+api.getRaw('money');  // Returns: "7F96"
 ```
 
 #### `setRaw(fieldName, hexValue)`
@@ -84,7 +84,7 @@ Sets raw hex bytes for a field.
 
 **Example:**
 ```javascript
-api.setRaw('money', 'ff ff');  // Sets money to 65535
+api.setRaw('money', 'ff FF');  // Sets money to 65535 the case dosen't matter
 ```
 
 ### Information Methods
