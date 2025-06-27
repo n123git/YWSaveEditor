@@ -101,7 +101,7 @@ Lists all available fields in the save file.
 **Example:**
 ```javascript
 api.listFields();
-// Returns: [
+Returns: [
  {
     "name": "Location",
     "format": "location",
