@@ -194,10 +194,11 @@ api.syncSave(d)
 ## Data Types
 
 ### Numbers
-- `uint8`: 0-255
-- `uint24`: 0-16,777,215  
-- `uint32`: 0-4,294,967,295
-- `float32`: 32-bit floating point number
+- `uint8`: 0-255 (`0x00`-`0xFF`)
+- `uint16`: 0-65,535 (`0x00`-`0xFFFF`)
+- `uint24`: 0-16,777,215  (`0x00`-`0xFFFFFF`)
+- `uint32`: 0-4,294,967,295  (`0x00`-`0xFFFFFFFF`)
+- `float32`: 32-bit floating point number (`0x00`-`0xFFFFFFFF`)
 
 ### Enums
 String values from predefined lists:
