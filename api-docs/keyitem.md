@@ -37,7 +37,7 @@ Note: this doc uses `SaveAPI`, `SaveAPI` is an instance of `SaveEditorAPI` that 
 
 #### `SaveAPI.syncSave(hexData)`
 Alias for `SaveAPI.loadSave(hexData)`. Requries API v1.1
-- Notes: Ignores whitespace, case insensitive.
+- Notes: Ignores whitespace, case insensitive, and filters out/ignores invalid characters such as G.
 
 **Example:**
 ```javascript
@@ -66,7 +66,8 @@ if (version < minimum) {
 
 #### `SaveAPI.loadSave(hexData)`
 Loads save data from a hex string. Kinda self-explanatory.
-
+- Notes: Ignores whitespace, case insensitive, and filters out/ignores invalid characters such as G.
+ 
 **Parameters:**
 - `hexData` (string): The hex string of the save file (spaces and newlines allowed)
 
