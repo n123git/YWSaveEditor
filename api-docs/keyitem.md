@@ -183,6 +183,7 @@ SaveAPI.removeItem(0); // Clear first slot
 
 #### `SaveAPI.exportSave()`
 Exports the current save data as a hex string.
+- Occasionally had newlines before API v1.1
 
 **Returns:**
 - `string`: Hex string representation of the modified save data
