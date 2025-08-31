@@ -6,7 +6,7 @@
 
 # Yo-kai Watch 2 Save Editor
 
-A terrible, WIP **Save Editor for Yo-kai Watch 2**, which is made to support **desktop, mobile and the 3DS!<sup><a href="#footnote-1" style="text-decoration: none; color: inherit;">1</a></sup>** Built to be reliable yet feature-rich. Whether you're a competitive player, modder, or just a casual fan — this tool was made for you!
+A terrible, WIP **Save Editor for Yo-kai Watch 2**, which is made to support **desktop, mobile and the 3DS!<sup><a href="#footnote-1" style="text-decoration: none; color: inherit;">1</a></sup>** Built to be reliable yet configurable and feature-rich. Whether you're a competitive player, modder, or just a curious player — this tool was made for you!
 
 ### Disclaimer
 This tool is *severly* unfinished, I do not recommend it, find better ones [here](https://github.com/nobodyF34R/ykw-editors).</br>
@@ -54,7 +54,7 @@ This tool is provided "as is" without any warranties, express or implied. The cr
 
 ### ➤ 3DS Version
 - [Download `.cia`](#)  <!-- I will release the 3DS version *once* i'm satisfied with the web ver -->
-
+Not publically available yet.
 ---
 
 ## Getting Started
